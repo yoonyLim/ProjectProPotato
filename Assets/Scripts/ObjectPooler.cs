@@ -8,6 +8,7 @@ public class ObjectPooler : MonoBehaviour
     [SerializeField] int poolSize = 10;
     [SerializeField] List<Transform> spawnPoints;
 
+
     private List<GameObject> pool;
     // Start is called before the first frame update
     void Start()
@@ -37,7 +38,6 @@ public class ObjectPooler : MonoBehaviour
             }
         }
 
-
         return CreateNewObject();
 
     }
@@ -46,6 +46,7 @@ public class ObjectPooler : MonoBehaviour
     {
         GameObject obj = Instantiate(prefab, transform);
         obj.transform.position = spawnPoints[Random.Range(0, spawnPoints.Count)].position;
+        obj.transform.rotation = Quaternion.Euler(-90f, -90f, 0f);
         obj.SetActive(false);
         pool.Add(obj);
         return obj;

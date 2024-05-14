@@ -1,14 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Video;
 
 public class ProfessorController : MonoBehaviour
 {
     [SerializeField] ObjectPooler knifePool;
-    // Start is called before the first frame update
-    void Start()
+    Animator anim;
+
+    
+
+    private void Awake()
     {
-        
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -16,13 +20,33 @@ public class ProfessorController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.A))
         {
-            SpawnKnife();
+            float knifeXPos = SpawnKnife();
+
+            if (knifeXPos > 0)
+            {
+                anim.SetTrigger("LeftThrow");
+            } 
+            else if (knifeXPos < 0)
+            {
+                anim.SetTrigger("RightThrow");
+            }
+
         }
+
+
+
     }
 
-    void SpawnKnife()
+    float SpawnKnife()
     {
         GameObject knife = knifePool.GetPooledObject();
         knife.SetActive(true);
+        return knife.transform.position.x;
     }
+
+    
+
+    
+
+    
 }

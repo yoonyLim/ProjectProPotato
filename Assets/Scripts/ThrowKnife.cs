@@ -23,8 +23,8 @@ public class ThrowKnife : MonoBehaviour
     void FixedUpdate()
     {
         body.velocity = Vector3.back * throwSpeed;
-        
-        
+
+
 
     }
 
@@ -35,4 +35,6 @@ public class ThrowKnife : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
+
+    
 }
