@@ -11,17 +11,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 8bdb80f490eb3ef48acf7c3f30cb3ffd,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 4
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8bdb80f490eb3ef48acf7c3f30cb3ffd,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 4
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8bdb80f490eb3ef48acf7c3f30cb3ffd,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 4
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8bdb80f490eb3ef48acf7c3f30cb3ffd,
         type: 3}
@@ -149,8 +149,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f26b6f0e44f2724ea49bac687ca7156, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  throwSpeed: 50
-  rotateSpeed: 600
+  throwSpeed: 100
+  rotateSpeed: 800
 --- !u!1 &7866781253695850455 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7995116940124051756, guid: 8bdb80f490eb3ef48acf7c3f30cb3ffd,
@@ -172,7 +172,7 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
@@ -200,7 +200,7 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5

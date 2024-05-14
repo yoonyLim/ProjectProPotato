@@ -7,6 +7,7 @@ public class ThrowKnife : MonoBehaviour
     Rigidbody body;
     [SerializeField] float throwSpeed;
     [SerializeField] float rotateSpeed;
+    
 
     
     void Start()
@@ -22,11 +23,20 @@ public class ThrowKnife : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        body.velocity = Vector3.back * throwSpeed;
+        if (FindObjectOfType<ProfessorController>().knifeXPos > 0)
+        {
+            body.velocity = (FindObjectOfType<ProfessorController>().leftAimPoint.position - transform.position).normalized * throwSpeed;
+        }
+        else if (FindObjectOfType<ProfessorController>().knifeXPos < 0)
+        {
+            body.velocity = (FindObjectOfType<ProfessorController>().rightAimPoint.position - transform.position).normalized * throwSpeed;
+        }
+        
 
 
 
     }
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -36,5 +46,5 @@ public class ThrowKnife : MonoBehaviour
         }
     }
 
-    
+
 }
