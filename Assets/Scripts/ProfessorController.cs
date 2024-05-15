@@ -5,7 +5,7 @@ using UnityEngine.Video;
 
 public class ProfessorController : MonoBehaviour
 {
-    [SerializeField] ObjectPooler knifePool;
+    [SerializeField] KnifePooler knifePool;
     Animator anim;
     bool throwReady = true;
     [SerializeField] float cooldownTime = 2f;

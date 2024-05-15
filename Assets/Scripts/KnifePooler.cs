@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectPooler : MonoBehaviour
+public class KnifePooler : MonoBehaviour
 {
     [SerializeField] GameObject prefab;
     [SerializeField] int poolSize = 10;
