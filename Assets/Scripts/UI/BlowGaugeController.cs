@@ -37,7 +37,7 @@ public class BlowGaugeController : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            blowGauge.value += 5.0f;
+            blowGauge.value += 0.6f;
         }
 
         if (blowGauge.value == 100.0f)
