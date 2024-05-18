@@ -1,0 +1,113 @@
+fileFormatVersion: 2
+guid: d24f4cf0d653159439977950dc6ee2ef
+timeCreated: 1488567667
+licenseType: Store
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: KitchenVentilation 1
+    100004: KitchenVentilation2
+    100006: KitchenVentilation3
+    100008: KitchenVentilation4
+    100010: KitchenVentilationInside
+    100012: KitchenVentilationInside2
+    100014: KitchenVentilationInside3
+    100016: KitchenVentilationInside4
+    100018: KitchenVentilationInside5
+    400000: //RootNode
+    400002: KitchenVentilation 1
+    400004: KitchenVentilation2
+    400006: KitchenVentilation3
+    400008: KitchenVentilation4
+    400010: KitchenVentilationInside
+    400012: KitchenVentilationInside2
+    400014: KitchenVentilationInside3
+    400016: KitchenVentilationInside4
+    400018: KitchenVentilationInside5
+    2300000: KitchenVentilation 1
+    2300002: KitchenVentilation2
+    2300004: KitchenVentilation3
+    2300006: KitchenVentilation4
+    2300008: KitchenVentilationInside
+    2300010: KitchenVentilationInside2
+    2300012: KitchenVentilationInside3
+    2300014: KitchenVentilationInside4
+    2300016: KitchenVentilationInside5
+    3300000: KitchenVentilation 1
+    3300002: KitchenVentilation2
+    3300004: KitchenVentilation3
+    3300006: KitchenVentilation4
+    3300008: KitchenVentilationInside
+    3300010: KitchenVentilationInside2
+    3300012: KitchenVentilationInside3
+    3300014: KitchenVentilationInside4
+    3300016: KitchenVentilationInside5
+    4300000: KitchenVentilationInside3
+    4300002: KitchenVentilation2
+    4300004: KitchenVentilationInside5
+    4300006: KitchenVentilation4
+    4300008: KitchenVentilationInside4
+    4300010: KitchenVentilation3
+    4300012: KitchenVentilation
+    4300014: KitchenVentilationInside2
+    4300016: KitchenVentilationInside
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

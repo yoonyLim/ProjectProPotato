@@ -1,0 +1,216 @@
+fileFormatVersion: 2
+guid: 94e825fde6a19c6479c050e20c482162
+timeCreated: 1488735952
+licenseType: Store
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: back
+    100002: claw_L
+    100004: claw_R
+    100006: //RootNode
+    100008: Hub
+    100010: LLeg11
+    100012: LLeg12
+    100014: LLeg13
+    100016: LLeg21
+    100018: LLeg22
+    100020: LLeg23
+    100022: LLeg31
+    100024: LLeg32
+    100026: LLeg33
+    100028: LLeg41
+    100030: LLeg42
+    100032: LLeg43
+    100034: RLeg11
+    100036: RLeg12
+    100038: RLeg13
+    100040: RLeg21
+    100042: RLeg22
+    100044: RLeg23
+    100046: RLeg31
+    100048: RLeg32
+    100050: RLeg33
+    100052: RLeg41
+    100054: RLeg42
+    100056: RLeg43
+    100058: Skin
+    400000: back
+    400002: claw_L
+    400004: claw_R
+    400006: //RootNode
+    400008: Hub
+    400010: LLeg11
+    400012: LLeg12
+    400014: LLeg13
+    400016: LLeg21
+    400018: LLeg22
+    400020: LLeg23
+    400022: LLeg31
+    400024: LLeg32
+    400026: LLeg33
+    400028: LLeg41
+    400030: LLeg42
+    400032: LLeg43
+    400034: RLeg11
+    400036: RLeg12
+    400038: RLeg13
+    400040: RLeg21
+    400042: RLeg22
+    400044: RLeg23
+    400046: RLeg31
+    400048: RLeg32
+    400050: RLeg33
+    400052: RLeg41
+    400054: RLeg42
+    400056: RLeg43
+    400058: Skin
+    4300000: Cockroach
+    7400000: Idle
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Idle
+      takeName: C4D Animation Take
+      firstFrame: 0
+      lastFrame: 86
+      wrapMode: 4
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Hub
+        weight: 1
+      - path: Hub/back
+        weight: 1
+      - path: Hub/claw_L
+        weight: 1
+      - path: Hub/claw_R
+        weight: 1
+      - path: Hub/LLeg11
+        weight: 1
+      - path: Hub/LLeg11/LLeg12
+        weight: 1
+      - path: Hub/LLeg11/LLeg12/LLeg13
+        weight: 1
+      - path: Hub/LLeg21
+        weight: 1
+      - path: Hub/LLeg21/LLeg22
+        weight: 1
+      - path: Hub/LLeg21/LLeg22/LLeg23
+        weight: 1
+      - path: Hub/LLeg31
+        weight: 1
+      - path: Hub/LLeg31/LLeg32
+        weight: 1
+      - path: Hub/LLeg31/LLeg32/LLeg33
+        weight: 1
+      - path: Hub/LLeg41
+        weight: 1
+      - path: Hub/LLeg41/LLeg42
+        weight: 1
+      - path: Hub/LLeg41/LLeg42/LLeg43
+        weight: 1
+      - path: Hub/RLeg11
+        weight: 1
+      - path: Hub/RLeg11/RLeg12
+        weight: 1
+      - path: Hub/RLeg11/RLeg12/RLeg13
+        weight: 1
+      - path: Hub/RLeg21
+        weight: 1
+      - path: Hub/RLeg21/RLeg22
+        weight: 1
+      - path: Hub/RLeg21/RLeg22/RLeg23
+        weight: 1
+      - path: Hub/RLeg31
+        weight: 1
+      - path: Hub/RLeg31/RLeg32
+        weight: 1
+      - path: Hub/RLeg31/RLeg32/RLeg33
+        weight: 1
+      - path: Hub/RLeg41
+        weight: 1
+      - path: Hub/RLeg41/RLeg42
+        weight: 1
+      - path: Hub/RLeg41/RLeg42/RLeg43
+        weight: 1
+      - path: Skin
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

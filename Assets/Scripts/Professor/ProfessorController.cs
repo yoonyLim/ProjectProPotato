@@ -11,10 +11,11 @@ public class ProfessorController : MonoBehaviour
     bool throwReady = true;
     bool rollReady = true;
     [SerializeField] float knifeCooldownTime = 2f;
-    [SerializeField] float pinCooldownTime = 2f;
+    [SerializeField] float pinCooldownTime = 5f;
     public float knifeXPos;
     public Transform leftAimPoint;
     public Transform rightAimPoint;
+
 
 
 
@@ -27,35 +28,19 @@ public class ProfessorController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A) && throwReady && anim.GetCurrentAnimatorStateInfo(0).IsName("Professor_Idle"))
+        if (Input.GetKeyDown(KeyCode.A))
         {
-
-            knifeXPos = SpawnKnife();
-
-            if (knifeXPos > 0)
-            {
-                anim.SetTrigger("LeftThrow");
-            } 
-            else if (knifeXPos < 0)
-            {
-                anim.SetTrigger("RightThrow");
-            }
-
-            StartCoroutine(ThrowCooldownRoutine(knifeCooldownTime));
-
+            ThrowKnife();
         }
 
-        if (Input.GetKeyDown(KeyCode.D) && rollReady && anim.GetCurrentAnimatorStateInfo(0).IsName("Professor_Idle"))
+        if (Input.GetKeyDown(KeyCode.D))
         {
-            SpawnPin();
-
-            anim.SetTrigger("Roll");
-
-            StartCoroutine(RollCooldownRoutine(pinCooldownTime));
+            RollPin();
         }
-
 
     }
+
+    
 
     IEnumerator RollCooldownRoutine(float cooldownTime)
     {
@@ -75,14 +60,47 @@ public class ProfessorController : MonoBehaviour
         throwReady = true;
     }
 
+    void ThrowKnife()
+    {
+        if (throwReady)
+        {
+
+            knifeXPos = SpawnKnife();
+
+            if (knifeXPos > 0)
+            {
+                anim.SetTrigger("LeftThrow");
+            }
+            else if (knifeXPos < 0)
+            {
+                anim.SetTrigger("RightThrow");
+            }
+
+            StartCoroutine(ThrowCooldownRoutine(knifeCooldownTime));
+
+        }
+    }
+
+    void RollPin()
+    {
+        if ( rollReady)
+        {
+            SpawnPin();
+
+            anim.SetTrigger("Roll");
+
+            StartCoroutine(RollCooldownRoutine(pinCooldownTime));
+        }
+    }
+
     float SpawnKnife()
     {
         GameObject knife = knifePool.GetPooledObject();
-        StartCoroutine(spawnKnifeDelay(knife));
+        StartCoroutine(SpawnKnifeDelay(knife));
         return knife.transform.position.x;
     }
 
-    IEnumerator spawnKnifeDelay(GameObject knife)
+    IEnumerator SpawnKnifeDelay(GameObject knife)
     {
         yield return new WaitForSeconds(0.5f);
         knife.SetActive(true);
@@ -91,10 +109,10 @@ public class ProfessorController : MonoBehaviour
     void SpawnPin()
     {
         GameObject pin = pinPool.GetPooledObject();
-        StartCoroutine(spawnPinDelay(pin));
+        StartCoroutine(SpawnPinDelay(pin));
     }
 
-    IEnumerator spawnPinDelay(GameObject pin)
+    IEnumerator SpawnPinDelay(GameObject pin)
     {
         yield return new WaitForSeconds(1f);
         pin.SetActive(true);
@@ -102,7 +120,5 @@ public class ProfessorController : MonoBehaviour
 
     
 
-    
 
-    
 }
