@@ -27,7 +27,7 @@ public class ProfessorController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A) && throwReady)
+        if (Input.GetKeyDown(KeyCode.A) && throwReady && anim.GetCurrentAnimatorStateInfo(0).IsName("Professor_Idle"))
         {
 
             knifeXPos = SpawnKnife();
@@ -45,7 +45,7 @@ public class ProfessorController : MonoBehaviour
 
         }
 
-        if (Input.GetKeyDown(KeyCode.D) && rollReady)
+        if (Input.GetKeyDown(KeyCode.D) && rollReady && anim.GetCurrentAnimatorStateInfo(0).IsName("Professor_Idle"))
         {
             SpawnPin();
 

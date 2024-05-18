@@ -118,7 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d36aeadde6885c44fb66c4154e12c9a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pinSpeed: 50
+  pinSpeed: 100
   rotateSpeed: 1500
 --- !u!54 &1342095956436809754
 Rigidbody:
