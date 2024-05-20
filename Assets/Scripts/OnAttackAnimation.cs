@@ -7,6 +7,7 @@ public class OnAttackAnimation : StateMachineBehaviour
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         GameManager.instance.state = GameManager.professorState.Attack;
+        
     }
 
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

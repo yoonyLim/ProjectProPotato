@@ -3,20 +3,35 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum SoundType
-{
-    KnifeRotate,
-    Throw,
-    Roll
-}
 
-[RequireComponent(typeof(AudioSource))] 
 public class AudioManager : MonoBehaviour
 {
-    [SerializeField] private AudioClip[] soundList;
-    private static AudioManager instance;
-    private AudioSource audioSource;
+    public static AudioManager instance;
 
+    [Header("Throwing Swoosh Sound")]
+    [SerializeField] AudioClip throwingClip;
+    [SerializeField]
+    [Range(0f, 1f)] float throwingVolume = 1f;
+
+    [Header("Knife Roate Sound")]
+    [SerializeField] AudioClip knifeRotateClip;
+    [SerializeField]
+    [Range(0f, 1f)] float knifeVolume = 1f;
+
+    [Header("Rolling Pin Sound")]
+    [SerializeField] AudioClip rollingPinClip;
+    [SerializeField]
+    [Range(0f, 1f)] float rollingPinVolume = 1f;
+
+    [Header("Professor Throw Voice")]
+    [SerializeField] AudioClip[] throwVoices;
+    [SerializeField]
+    [Range(0f, 1f)] float[] throwVoicesVolume;
+
+    [Header("Professor Roll Voice")]
+    [SerializeField] AudioClip rollVoice;
+    [SerializeField]
+    [Range(0f, 1f)] float rollVoiceVolume = 1f;
 
     private void Awake()
     {
@@ -31,17 +46,38 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    private void Start()
+    void PlayClip(AudioClip clip, float volume)
     {
-        audioSource = GetComponent<AudioSource>();
+        if (clip != null)
+        {
+            Vector3 cameraPos = Camera.main.transform.position;
+            AudioSource.PlayClipAtPoint(clip, cameraPos, volume);
+        }
     }
 
-    public static void PlaySound(SoundType sound, float volume = 1)
+    public void PlayThrowingClip()
     {
-        instance.audioSource.PlayOneShot(instance.soundList[(int)sound], volume);
+        PlayClip(throwingClip, throwingVolume);
     }
 
+    public void PlayKnifeClip()
+    {
+        PlayClip(knifeRotateClip, knifeVolume);
+    }
 
+    public void PlayPinClip()
+    {
+        PlayClip(rollingPinClip, rollingPinVolume);
+    }
 
+    public void PlayThrowVoice()
+    {
+        int randomIndex = UnityEngine.Random.Range(0, throwVoices.Length);
+        PlayClip(throwVoices[randomIndex], throwVoicesVolume[randomIndex]);
+    }
 
+    public void PlayRollVoice()
+    {
+        PlayClip(rollVoice, rollVoiceVolume);
+    }
 }

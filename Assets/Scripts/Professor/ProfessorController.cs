@@ -69,12 +69,14 @@ public class ProfessorController : MonoBehaviour
             if (knifeXPos > 0)
             {
                 anim.SetTrigger("LeftThrow");
-                AudioManager.PlaySound(SoundType.Throw);
+                AudioManager.instance.PlayThrowVoice();
+                StartCoroutine(PlayThrowSound(0.1f));
             }
             else if (knifeXPos < 0)
             {
                 anim.SetTrigger("RightThrow");
-                StartCoroutine(PlayRightThrowSound());
+                AudioManager.instance.PlayThrowVoice();
+                StartCoroutine(PlayThrowSound(0.2f));
             }
 
             StartCoroutine(ThrowCooldownRoutine(knifeCooldownTime));
@@ -82,10 +84,10 @@ public class ProfessorController : MonoBehaviour
 
         }
     }
-    IEnumerator PlayRightThrowSound()
+    IEnumerator PlayThrowSound(float delay)
     {
-        yield return new WaitForSeconds(0.2f);
-        AudioManager.PlaySound(SoundType.Throw);
+        yield return new WaitForSeconds(delay);
+        AudioManager.instance.PlayThrowingClip();
     }
 
     void RollPin()
@@ -95,6 +97,7 @@ public class ProfessorController : MonoBehaviour
             SpawnPin();
 
             anim.SetTrigger("Roll");
+            AudioManager.instance.PlayRollVoice();
 
             StartCoroutine(RollCooldownRoutine(pinCooldownTime));
         }
@@ -111,7 +114,7 @@ public class ProfessorController : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         knife.SetActive(true);
-        AudioManager.PlaySound(SoundType.KnifeRotate);
+        AudioManager.instance.PlayKnifeClip();
     }
 
     void SpawnPin()
@@ -124,7 +127,7 @@ public class ProfessorController : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         pin.SetActive(true);
-        AudioManager.PlaySound(SoundType.Roll);
+        AudioManager.instance.PlayPinClip();
     }
 
     
