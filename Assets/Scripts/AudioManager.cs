@@ -11,7 +11,6 @@ public class AudioManager : MonoBehaviour
     public AudioClip bgmClip;
     public float bgmVolume;
     AudioSource bgmPlayer;
-    AudioHighPassFilter bgmEffect;
 
     [Header("#SFX")]
     public AudioClip[] sfxClips;

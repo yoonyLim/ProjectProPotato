@@ -28,12 +28,12 @@ public class ProfessorController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.A) && GameManager.Instance.state == GameManager.professorState.Idle)
         {
             ThrowKnife();
         }
 
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.D) && GameManager.Instance.state == GameManager.professorState.Idle)
         {
             RollPin();
         }
@@ -64,7 +64,6 @@ public class ProfessorController : MonoBehaviour
     {
         if (throwReady)
         {
-
             knifeXPos = SpawnKnife();
 
             if (knifeXPos > 0)
@@ -77,6 +76,7 @@ public class ProfessorController : MonoBehaviour
             }
 
             StartCoroutine(ThrowCooldownRoutine(knifeCooldownTime));
+
 
         }
     }
