@@ -1,29 +1,28 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum SoundType
+{
+    KnifeRotate,
+    Throw,
+    Roll
+}
+
+[RequireComponent(typeof(AudioSource))] 
 public class AudioManager : MonoBehaviour
 {
+    [SerializeField] private AudioClip[] soundList;
+    private static AudioManager instance;
+    private AudioSource audioSource;
 
-    public static AudioManager Instance;
-
-    [Header("#BGM")]
-    public AudioClip bgmClip;
-    public float bgmVolume;
-    AudioSource bgmPlayer;
-
-    [Header("#SFX")]
-    public AudioClip[] sfxClips;
-    public float sfxVolume;
-    public int channels;
-    AudioSource[] sfxPlayers;
-    int channelIndex;
 
     private void Awake()
     {
-        if (Instance == null)
+        if (instance == null)
         {
-            Instance = this;
+            instance = this;
             DontDestroyOnLoad(gameObject);
         }
         else
@@ -32,9 +31,17 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        audioSource = GetComponent<AudioSource>();
     }
+
+    public static void PlaySound(SoundType sound, float volume = 1)
+    {
+        instance.audioSource.PlayOneShot(instance.soundList[(int)sound], volume);
+    }
+
+
+
+
 }

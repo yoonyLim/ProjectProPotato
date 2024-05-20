@@ -28,12 +28,12 @@ public class ProfessorController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A) && GameManager.Instance.state == GameManager.professorState.Idle)
+        if (Input.GetKeyDown(KeyCode.A) && GameManager.instance.state == GameManager.professorState.Idle)
         {
             ThrowKnife();
         }
 
-        if (Input.GetKeyDown(KeyCode.D) && GameManager.Instance.state == GameManager.professorState.Idle)
+        if (Input.GetKeyDown(KeyCode.D) && GameManager.instance.state == GameManager.professorState.Idle)
         {
             RollPin();
         }
@@ -69,16 +69,23 @@ public class ProfessorController : MonoBehaviour
             if (knifeXPos > 0)
             {
                 anim.SetTrigger("LeftThrow");
+                AudioManager.PlaySound(SoundType.Throw);
             }
             else if (knifeXPos < 0)
             {
                 anim.SetTrigger("RightThrow");
+                StartCoroutine(PlayRightThrowSound());
             }
 
             StartCoroutine(ThrowCooldownRoutine(knifeCooldownTime));
 
 
         }
+    }
+    IEnumerator PlayRightThrowSound()
+    {
+        yield return new WaitForSeconds(0.2f);
+        AudioManager.PlaySound(SoundType.Throw);
     }
 
     void RollPin()
@@ -104,6 +111,7 @@ public class ProfessorController : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         knife.SetActive(true);
+        AudioManager.PlaySound(SoundType.KnifeRotate);
     }
 
     void SpawnPin()
@@ -116,6 +124,7 @@ public class ProfessorController : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         pin.SetActive(true);
+        AudioManager.PlaySound(SoundType.Roll);
     }
 
     
