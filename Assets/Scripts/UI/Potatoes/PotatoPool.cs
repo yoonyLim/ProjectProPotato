@@ -7,7 +7,7 @@ public class PotatoPool : MonoBehaviour
     public static PotatoPool pool;
 
     private List<GameObject> pooledPotatoes = new List<GameObject>();
-    private int amntPool = 15;
+    private int amntPool = 30;
 
     [SerializeField] private GameObject potatoPrefab;
 
