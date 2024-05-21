@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] GenericObserver<int> Lives = new GenericObserver<int>(3);
+
     Animator potatoAnimator;
 
     public bool isRight;
@@ -15,9 +17,9 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        Lives.Invoke();
         isRight = true;
         potatoAnimator = GetComponent<Animator>();
-        
     }
 
     // Update is called once per frame
@@ -34,5 +36,9 @@ public class Player : MonoBehaviour
             //potatoAnimator.SetBool("isJump", true);
             isRight = !isRight;
         }
+
+        // If player is hit by a knife or a roller
+        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D))
+            Lives.Value--;
     }
 }
