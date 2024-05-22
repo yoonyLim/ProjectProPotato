@@ -1761,6 +1761,8 @@ MonoBehaviour:
   - 1
   rollVoice: {fileID: 8300000, guid: c83ad092e36d3ab4dab717809611c66a, type: 3}
   rollVoiceVolume: 0.4
+  angerVoice: {fileID: 8300000, guid: 3131aa11890e69241958d4cacf5180eb, type: 3}
+  angerVoiceVolume: 1
 --- !u!4 &299969651
 Transform:
   m_ObjectHideFlags: 0
@@ -13507,7 +13509,7 @@ Transform:
   m_GameObject: {fileID: 1944205968}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 14.72, z: -27.02}
+  m_LocalPosition: {x: 0.5, y: 14.72, z: -17.5}
   m_LocalScale: {x: 61.85356, y: 37.041546, z: 2.7591205}
   m_ConstrainProportionsScale: 0
   m_Children: []

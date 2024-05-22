@@ -34,6 +34,6 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        elapsedTime = Time.time;
+        elapsedTime += Time.deltaTime;
     }
 }
