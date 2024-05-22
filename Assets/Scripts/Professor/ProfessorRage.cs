@@ -53,7 +53,7 @@ public class ProfessorRage : MonoBehaviour
         GameManager.instance.rageTransforming = true;
         StartCoroutine(ChangeColor());
         ChangeCooldown();
-        yield return new WaitForSeconds(6f);
+        yield return new WaitForSeconds(4f);
         GameManager.instance.rageTransforming = false;
     }
 }
