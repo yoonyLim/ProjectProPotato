@@ -9,6 +9,7 @@ public class ProfessorRage : MonoBehaviour
     SpriteRenderer spriteRenderer;
     float colorElapsedTime = 0f;
     [SerializeField] float colorChangeDuration = 4f;
+    [SerializeField] GameObject smokeObject;
     bool hasRaged = false;
     Animator animator;
     // Start is called before the first frame update
@@ -57,10 +58,10 @@ public class ProfessorRage : MonoBehaviour
         animator.SetLayerWeight(animator.GetLayerIndex("Angry"), 1f);
         animator.SetLayerWeight(animator.GetLayerIndex("Normal"), 0f);
         animator.SetTrigger("Anger");
+        smokeObject.SetActive(true);
         AudioManager.instance.PlayAngerVoice();
         StartCoroutine(ChangeColor());
         ChangeCooldown();
-
         yield return new WaitForSeconds(4f);
         GameManager.instance.rageTransforming = false;
     }

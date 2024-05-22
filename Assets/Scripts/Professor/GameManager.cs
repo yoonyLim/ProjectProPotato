@@ -6,6 +6,9 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public float elapsedTime = 0f;
+
+    public GameObject smokeObject;
+
     public enum professorState { Idle, Attack, Transforming };
     public professorState state = professorState.Idle;
 
