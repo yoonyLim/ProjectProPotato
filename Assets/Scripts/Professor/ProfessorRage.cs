@@ -23,6 +23,7 @@ public class ProfessorRage : MonoBehaviour
     {
         if (!hasRaged && GameManager.instance.elapsedTime > rageStartTime)
         {
+            GameManager.instance.rageTransforming = true;
             StartCoroutine(RageTransformRoutine());
             hasRaged = true;
         }
@@ -52,7 +53,7 @@ public class ProfessorRage : MonoBehaviour
 
     IEnumerator RageTransformRoutine()
     {
-        GameManager.instance.rageTransforming = true;
+        
         animator.SetLayerWeight(animator.GetLayerIndex("Angry"), 1f);
         animator.SetLayerWeight(animator.GetLayerIndex("Normal"), 0f);
         animator.SetTrigger("Anger");
