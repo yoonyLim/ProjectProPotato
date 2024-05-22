@@ -10,8 +10,7 @@ public class ProfessorController : MonoBehaviour
     Animator anim;
     bool throwReady = true;
     bool rollReady = true;
-    [SerializeField] float knifeCooldownTime = 2f;
-    [SerializeField] float pinCooldownTime = 5f;
+
     public float knifeXPos;
     public Transform leftAimPoint;
     public Transform rightAimPoint;
@@ -28,15 +27,19 @@ public class ProfessorController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A) && GameManager.instance.state == GameManager.professorState.Idle)
+        if (!GameManager.instance.rageTransforming && GameManager.instance.state == GameManager.professorState.Idle)
         {
-            ThrowKnife();
-        }
+            if (Input.GetKeyDown(KeyCode.A))
+            {
+                ThrowKnife();
+            }
 
-        if (Input.GetKeyDown(KeyCode.D) && GameManager.instance.state == GameManager.professorState.Idle)
-        {
-            RollPin();
+            if (Input.GetKeyDown(KeyCode.D))
+            {
+                RollPin();
+            }   
         }
+        
 
     }
 
@@ -79,7 +82,7 @@ public class ProfessorController : MonoBehaviour
                 StartCoroutine(PlayThrowSound(0.2f));
             }
 
-            StartCoroutine(ThrowCooldownRoutine(knifeCooldownTime));
+            StartCoroutine(ThrowCooldownRoutine(GameManager.instance.knifeCooldown));
 
 
         }
@@ -99,7 +102,7 @@ public class ProfessorController : MonoBehaviour
             anim.SetTrigger("Roll");
             AudioManager.instance.PlayRollVoice();
 
-            StartCoroutine(RollCooldownRoutine(pinCooldownTime));
+            StartCoroutine(RollCooldownRoutine(GameManager.instance.pinCooldown));
         }
     }
 

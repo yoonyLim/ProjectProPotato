@@ -5,9 +5,6 @@ using UnityEngine;
 public class ThrowKnife : MonoBehaviour
 {
     Rigidbody body;
-    [SerializeField] float throwSpeed;
-    [SerializeField] float rotateSpeed;
-    
 
     
     void Start()
@@ -17,7 +14,7 @@ public class ThrowKnife : MonoBehaviour
 
     private void Update()
     {
-        transform.Rotate(Vector3.down * rotateSpeed * Time.deltaTime);
+        transform.Rotate(Vector3.down * GameManager.instance.knifeRoateSpeed * Time.deltaTime);
     }
 
     // Update is called once per frame
@@ -25,11 +22,13 @@ public class ThrowKnife : MonoBehaviour
     {
         if (FindObjectOfType<ProfessorController>().knifeXPos > 0)
         {
-            body.velocity = (FindObjectOfType<ProfessorController>().leftAimPoint.position - transform.position).normalized * throwSpeed;
+            body.velocity = (FindObjectOfType<ProfessorController>().leftAimPoint.position - transform.position).normalized
+                * GameManager.instance.knifeSpeed;
         }
         else if (FindObjectOfType<ProfessorController>().knifeXPos < 0)
         {
-            body.velocity = (FindObjectOfType<ProfessorController>().rightAimPoint.position - transform.position).normalized * throwSpeed;
+            body.velocity = (FindObjectOfType<ProfessorController>().rightAimPoint.position - transform.position).normalized
+                * GameManager.instance.knifeSpeed;
         }
         
 

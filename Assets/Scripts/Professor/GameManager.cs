@@ -8,6 +8,17 @@ public class GameManager : MonoBehaviour
     public float elapsedTime = 0f;
     public enum professorState { Idle, Attack };
     public professorState state = professorState.Idle;
+
+    public float knifeCooldown = 2f;
+    public float pinCooldown = 5f;
+
+    public float knifeSpeed = 100f;
+    public float knifeRoateSpeed = 800f;
+
+    public float pinSpeed = 100f;
+    public float pinRotateSpeed = 1500f;
+
+    public bool rageTransforming = false;
     private void Awake()
     {
         if (instance == null)
@@ -23,6 +34,6 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        elapsedTime = Time.time;
     }
 }

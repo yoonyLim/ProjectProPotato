@@ -1714,6 +1714,68 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 294749845}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &299969649
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 299969651}
+  - component: {fileID: 299969650}
+  m_Layer: 0
+  m_Name: Audio Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &299969650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 299969649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d02ab226e92baaa46975d5d19ae4a5ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  throwingClip: {fileID: 8300000, guid: 9ed6771f663cb5943bf326671fd9670a, type: 3}
+  throwingVolume: 0.6
+  knifeRotateClip: {fileID: 8300000, guid: ad1cc9018e729574e91fcac59667d74e, type: 3}
+  knifeVolume: 0.6
+  rollingPinClip: {fileID: 8300000, guid: 4ffaa2c0cb9057a4284119a9322a2f0b, type: 3}
+  rollingPinVolume: 1
+  throwVoices:
+  - {fileID: 8300000, guid: a569bcb440db65a4680225ec72eaa146, type: 3}
+  - {fileID: 8300000, guid: eaa7e4a4ae3947848a1ce0bd81ac98f4, type: 3}
+  - {fileID: 8300000, guid: 6157503e246948b4bae94995507a8315, type: 3}
+  - {fileID: 8300000, guid: eae2b69a8c604ca4296ab10ba4414c5c, type: 3}
+  throwVoicesVolume:
+  - 1
+  - 1
+  - 1
+  - 1
+  rollVoice: {fileID: 8300000, guid: c83ad092e36d3ab4dab717809611c66a, type: 3}
+  rollVoiceVolume: 0.4
+--- !u!4 &299969651
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 299969649}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -9320,6 +9382,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1345010689}
   - component: {fileID: 1345010690}
+  - component: {fileID: 1345010693}
   - component: {fileID: 1345010691}
   - component: {fileID: 1345010692}
   m_Layer: 0
@@ -9361,8 +9424,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   knifePool: {fileID: 1123012446}
   pinPool: {fileID: 382295326}
-  knifeCooldownTime: 2
-  pinCooldownTime: 2
   knifeXPos: 0
   leftAimPoint: {fileID: 1559919732}
   rightAimPoint: {fileID: 3350359}
@@ -9386,7 +9447,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9439,6 +9500,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1345010693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345010685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e09ef7696e0fbe940bba282bacd33449, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rageStartTime: 10
+  colorChangeDuration: 4
 --- !u!1 &1352806658
 GameObject:
   m_ObjectHideFlags: 0
@@ -13574,6 +13649,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   elapsedTime: 0
   state: 0
+  knifeCooldown: 5
+  pinCooldown: 5
+  knifeSpeed: 100
+  knifeRoateSpeed: 800
+  pinSpeed: 100
+  pinRotateSpeed: 1500
+  rageTransforming: 0
 --- !u!4 &2048560594
 Transform:
   m_ObjectHideFlags: 0
@@ -14609,3 +14691,4 @@ SceneRoots:
   - {fileID: 2048560594}
   - {fileID: 1230190992}
   - {fileID: 1680050321}
+  - {fileID: 299969651}

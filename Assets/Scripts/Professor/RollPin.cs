@@ -5,8 +5,6 @@ using UnityEngine;
 public class RollPin : MonoBehaviour
 {
     Rigidbody body;
-    [SerializeField] float pinSpeed;
-    [SerializeField] float rotateSpeed;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,12 +14,12 @@ public class RollPin : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(Vector3.down * rotateSpeed * Time.deltaTime);
+        transform.Rotate(Vector3.down * GameManager.instance.pinRotateSpeed * Time.deltaTime);
     }
 
     private void FixedUpdate()
     {
-        body.velocity = Vector3.back * pinSpeed;
+        body.velocity = Vector3.back * GameManager.instance.pinSpeed;
     }
 
     private void OnTriggerEnter(Collider other)
