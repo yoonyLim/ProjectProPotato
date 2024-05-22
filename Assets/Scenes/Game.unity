@@ -13649,7 +13649,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   elapsedTime: 0
   state: 0
-  knifeCooldown: 5
+  knifeCooldown: 2
   pinCooldown: 5
   knifeSpeed: 100
   knifeRoateSpeed: 800
