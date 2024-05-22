@@ -9,11 +9,14 @@ public class ProfessorRage : MonoBehaviour
     SpriteRenderer spriteRenderer;
     float colorElapsedTime = 0f;
     [SerializeField] float colorChangeDuration = 4f;
+    [SerializeField] GameObject smokeObject;
     bool hasRaged = false;
+    Animator animator;
     // Start is called before the first frame update
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -21,6 +24,7 @@ public class ProfessorRage : MonoBehaviour
     {
         if (!hasRaged && GameManager.instance.elapsedTime > rageStartTime)
         {
+            GameManager.instance.rageTransforming = true;
             StartCoroutine(RageTransformRoutine());
             hasRaged = true;
         }
@@ -28,8 +32,8 @@ public class ProfessorRage : MonoBehaviour
 
     private void ChangeCooldown()
     {
-        GameManager.instance.knifeCooldown = 1f;
-        GameManager.instance.pinCooldown = 4f;
+        GameManager.instance.knifeCooldown -= 1f;
+        GameManager.instance.pinCooldown -= 1f;
         GameManager.instance.knifeSpeed += 50f;
         GameManager.instance.knifeRoateSpeed += 200f;
         GameManager.instance.pinSpeed += 50f;
@@ -50,7 +54,12 @@ public class ProfessorRage : MonoBehaviour
 
     IEnumerator RageTransformRoutine()
     {
-        GameManager.instance.rageTransforming = true;
+        
+        animator.SetLayerWeight(animator.GetLayerIndex("Angry"), 1f);
+        animator.SetLayerWeight(animator.GetLayerIndex("Normal"), 0f);
+        animator.SetTrigger("Anger");
+        smokeObject.SetActive(true);
+        AudioManager.instance.PlayAngerVoice();
         StartCoroutine(ChangeColor());
         ChangeCooldown();
         yield return new WaitForSeconds(4f);

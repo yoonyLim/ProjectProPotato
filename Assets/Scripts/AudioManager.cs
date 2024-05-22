@@ -33,6 +33,12 @@ public class AudioManager : MonoBehaviour
     [SerializeField]
     [Range(0f, 1f)] float rollVoiceVolume = 1f;
 
+    [Header("Professor Anger Voice")]
+    [SerializeField] AudioClip angerVoice;
+    [SerializeField]
+    [Range(0f, 1f)] float angerVoiceVolume = 1f;
+
+
     private void Awake()
     {
         if (instance == null)
@@ -78,5 +84,10 @@ public class AudioManager : MonoBehaviour
     public void PlayRollVoice()
     {
         PlayClip(rollVoice, rollVoiceVolume);
+    }
+
+    public void PlayAngerVoice()
+    {
+        PlayClip(angerVoice, angerVoiceVolume);
     }
 }
