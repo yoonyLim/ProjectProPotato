@@ -198,7 +198,6 @@ GameObject:
   - component: {fileID: 7400537}
   - component: {fileID: 7400540}
   - component: {fileID: 7400539}
-  - component: {fileID: 7400538}
   m_Layer: 0
   m_Name: BeltPiece (6)
   m_TagString: Untagged
@@ -221,27 +220,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 470629065}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &7400538
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7400536}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &7400539
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -303,7 +281,6 @@ GameObject:
   - component: {fileID: 32160103}
   - component: {fileID: 32160106}
   - component: {fileID: 32160105}
-  - component: {fileID: 32160104}
   m_Layer: 0
   m_Name: BeltPiece (10)
   m_TagString: Untagged
@@ -326,27 +303,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 470629065}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &32160104
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 32160102}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &32160105
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -397,6 +353,78 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 32160102}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &53691414
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 53691416}
+  - component: {fileID: 53691415}
+  m_Layer: 0
+  m_Name: Virtual Camera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &53691415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 53691414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ExcludedPropertiesInInspector:
+  - m_Script
+  m_LockStageInInspector: 
+  m_StreamingVersion: 20170927
+  m_Priority: 10
+  m_StandbyUpdate: 2
+  m_LookAt: {fileID: 0}
+  m_Follow: {fileID: 0}
+  m_Lens:
+    FieldOfView: 60.000004
+    OrthographicSize: 5
+    NearClipPlane: 0.3
+    FarClipPlane: 1000
+    Dutch: 0
+    ModeOverride: 0
+    LensShift: {x: 0, y: 0}
+    GateFit: 2
+    FocusDistance: 10
+    m_SensorSize: {x: 1, y: 1}
+  m_Transitions:
+    m_BlendHint: 0
+    m_InheritPosition: 0
+    m_OnCameraLive:
+      m_PersistentCalls:
+        m_Calls: []
+  m_LegacyBlendHint: 0
+  m_ComponentOwner: {fileID: 1480774384}
+--- !u!4 &53691416
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 53691414}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.050287344, y: 0, z: 0, w: 0.99873483}
+  m_LocalPosition: {x: 0, y: 7.4, z: -19.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1480774384}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &90462804
 GameObject:
   m_ObjectHideFlags: 0
@@ -408,7 +436,6 @@ GameObject:
   - component: {fileID: 90462805}
   - component: {fileID: 90462808}
   - component: {fileID: 90462807}
-  - component: {fileID: 90462806}
   m_Layer: 0
   m_Name: BeltPiece (9)
   m_TagString: Untagged
@@ -431,27 +458,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1624443668}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &90462806
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 90462804}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &90462807
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -513,7 +519,6 @@ GameObject:
   - component: {fileID: 91623108}
   - component: {fileID: 91623111}
   - component: {fileID: 91623110}
-  - component: {fileID: 91623109}
   m_Layer: 0
   m_Name: BeltPiece (32)
   m_TagString: Untagged
@@ -536,27 +541,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1624443668}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &91623109
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 91623107}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &91623110
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -618,7 +602,6 @@ GameObject:
   - component: {fileID: 94063656}
   - component: {fileID: 94063659}
   - component: {fileID: 94063658}
-  - component: {fileID: 94063657}
   m_Layer: 0
   m_Name: BeltPiece (4)
   m_TagString: Untagged
@@ -641,27 +624,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1624443668}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &94063657
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 94063655}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &94063658
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -723,7 +685,6 @@ GameObject:
   - component: {fileID: 99786872}
   - component: {fileID: 99786875}
   - component: {fileID: 99786874}
-  - component: {fileID: 99786873}
   m_Layer: 0
   m_Name: BeltPiece (22)
   m_TagString: Untagged
@@ -746,27 +707,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 470629065}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &99786873
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 99786871}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &99786874
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -902,7 +842,6 @@ GameObject:
   - component: {fileID: 168549578}
   - component: {fileID: 168549581}
   - component: {fileID: 168549580}
-  - component: {fileID: 168549579}
   m_Layer: 0
   m_Name: BeltPiece (35)
   m_TagString: Untagged
@@ -925,27 +864,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 470629065}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &168549579
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 168549577}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &168549580
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1082,7 +1000,6 @@ GameObject:
   - component: {fileID: 188433037}
   - component: {fileID: 188433040}
   - component: {fileID: 188433039}
-  - component: {fileID: 188433038}
   m_Layer: 0
   m_Name: BeltPiece (5)
   m_TagString: Untagged
@@ -1105,27 +1022,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1624443668}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &188433038
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 188433036}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &188433039
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1305,7 +1201,6 @@ GameObject:
   - component: {fileID: 203261873}
   - component: {fileID: 203261876}
   - component: {fileID: 203261875}
-  - component: {fileID: 203261874}
   m_Layer: 0
   m_Name: BeltPiece (15)
   m_TagString: Untagged
@@ -1328,27 +1223,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1624443668}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &203261874
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 203261872}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &203261875
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1410,7 +1284,6 @@ GameObject:
   - component: {fileID: 257367989}
   - component: {fileID: 257367992}
   - component: {fileID: 257367991}
-  - component: {fileID: 257367990}
   m_Layer: 0
   m_Name: BeltPiece (37)
   m_TagString: Untagged
@@ -1433,27 +1306,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1624443668}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &257367990
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 257367988}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &257367991
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1515,7 +1367,6 @@ GameObject:
   - component: {fileID: 293664104}
   - component: {fileID: 293664107}
   - component: {fileID: 293664106}
-  - component: {fileID: 293664105}
   m_Layer: 0
   m_Name: BeltPiece (4)
   m_TagString: Untagged
@@ -1538,27 +1389,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 470629065}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &293664105
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 293664103}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &293664106
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1620,7 +1450,6 @@ GameObject:
   - component: {fileID: 294749846}
   - component: {fileID: 294749849}
   - component: {fileID: 294749848}
-  - component: {fileID: 294749847}
   m_Layer: 0
   m_Name: BeltPiece (27)
   m_TagString: Untagged
@@ -1643,27 +1472,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1624443668}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &294749847
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 294749845}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &294749848
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1788,6 +1596,7 @@ GameObject:
   - component: {fileID: 330585545}
   - component: {fileID: 330585544}
   - component: {fileID: 330585547}
+  - component: {fileID: 330585548}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1836,7 +1645,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 60.000004
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -1862,7 +1671,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.050287344, y: -0, z: -0, w: 0.99873483}
+  m_LocalRotation: {x: -0.050287344, y: 0, z: 0, w: 0.99873483}
   m_LocalPosition: {x: 0, y: 7.4, z: -19.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1913,6 +1722,40 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
+--- !u!114 &330585548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330585543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShowDebugText: 0
+  m_ShowCameraFrustum: 1
+  m_IgnoreTimeScale: 0
+  m_WorldUpOverride: {fileID: 0}
+  m_UpdateMethod: 2
+  m_BlendUpdateMethod: 1
+  m_DefaultBlend:
+    m_Style: 1
+    m_Time: 2
+    m_CustomCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  m_CustomBlends: {fileID: 0}
+  m_CameraCutEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_CameraActivatedEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &375500531
 GameObject:
   m_ObjectHideFlags: 0
@@ -1924,7 +1767,6 @@ GameObject:
   - component: {fileID: 375500532}
   - component: {fileID: 375500535}
   - component: {fileID: 375500534}
-  - component: {fileID: 375500533}
   m_Layer: 0
   m_Name: BeltPiece (33)
   m_TagString: Untagged
@@ -1947,27 +1789,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 470629065}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &375500533
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 375500531}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &375500534
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2152,7 +1973,6 @@ GameObject:
   - component: {fileID: 392791603}
   - component: {fileID: 392791606}
   - component: {fileID: 392791605}
-  - component: {fileID: 392791604}
   m_Layer: 0
   m_Name: BeltPiece (2)
   m_TagString: Untagged
@@ -2175,27 +1995,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1624443668}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &392791604
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 392791602}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &392791605
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2375,7 +2174,6 @@ GameObject:
   - component: {fileID: 396328507}
   - component: {fileID: 396328510}
   - component: {fileID: 396328509}
-  - component: {fileID: 396328508}
   m_Layer: 0
   m_Name: BeltPiece (31)
   m_TagString: Untagged
@@ -2398,27 +2196,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1624443668}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &396328508
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 396328506}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &396328509
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2480,7 +2257,6 @@ GameObject:
   - component: {fileID: 430013261}
   - component: {fileID: 430013264}
   - component: {fileID: 430013263}
-  - component: {fileID: 430013262}
   m_Layer: 0
   m_Name: BeltPiece (35)
   m_TagString: Untagged
@@ -2503,27 +2279,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1624443668}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &430013262
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 430013260}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &430013263
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2585,7 +2340,6 @@ GameObject:
   - component: {fileID: 431099873}
   - component: {fileID: 431099876}
   - component: {fileID: 431099875}
-  - component: {fileID: 431099874}
   m_Layer: 0
   m_Name: BeltPiece
   m_TagString: Untagged
@@ -2608,27 +2362,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1624443668}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &431099874
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 431099872}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &431099875
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3027,7 +2760,6 @@ GameObject:
   - component: {fileID: 519577674}
   - component: {fileID: 519577677}
   - component: {fileID: 519577676}
-  - component: {fileID: 519577675}
   m_Layer: 0
   m_Name: BeltPiece (39)
   m_TagString: Untagged
@@ -3050,27 +2782,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1624443668}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &519577675
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519577673}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &519577676
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3165,7 +2876,6 @@ GameObject:
   - component: {fileID: 546556314}
   - component: {fileID: 546556317}
   - component: {fileID: 546556316}
-  - component: {fileID: 546556315}
   m_Layer: 0
   m_Name: BeltPiece
   m_TagString: Untagged
@@ -3188,27 +2898,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 470629065}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &546556315
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 546556313}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &546556316
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3433,7 +3122,6 @@ GameObject:
   - component: {fileID: 563713539}
   - component: {fileID: 563713542}
   - component: {fileID: 563713541}
-  - component: {fileID: 563713540}
   m_Layer: 0
   m_Name: BeltPiece (8)
   m_TagString: Untagged
@@ -3456,27 +3144,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 470629065}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &563713540
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 563713538}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &563713541
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3612,7 +3279,6 @@ GameObject:
   - component: {fileID: 578646910}
   - component: {fileID: 578646913}
   - component: {fileID: 578646912}
-  - component: {fileID: 578646911}
   m_Layer: 0
   m_Name: BeltPiece (27)
   m_TagString: Untagged
@@ -3635,27 +3301,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 470629065}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &578646911
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 578646909}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &578646912
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3781,7 +3426,6 @@ GameObject:
   - component: {fileID: 610621822}
   - component: {fileID: 610621825}
   - component: {fileID: 610621824}
-  - component: {fileID: 610621823}
   m_Layer: 0
   m_Name: BeltPiece (8)
   m_TagString: Untagged
@@ -3804,27 +3448,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1624443668}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &610621823
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 610621821}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &610621824
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3886,7 +3509,6 @@ GameObject:
   - component: {fileID: 644863304}
   - component: {fileID: 644863307}
   - component: {fileID: 644863306}
-  - component: {fileID: 644863305}
   m_Layer: 0
   m_Name: BeltPiece (30)
   m_TagString: Untagged
@@ -3909,27 +3531,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 470629065}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &644863305
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 644863303}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &644863306
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4080,7 +3681,6 @@ GameObject:
   - component: {fileID: 666536534}
   - component: {fileID: 666536537}
   - component: {fileID: 666536536}
-  - component: {fileID: 666536535}
   m_Layer: 0
   m_Name: BeltPiece (31)
   m_TagString: Untagged
@@ -4103,27 +3703,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 470629065}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &666536535
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 666536533}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &666536536
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4259,7 +3838,6 @@ GameObject:
   - component: {fileID: 674535235}
   - component: {fileID: 674535238}
   - component: {fileID: 674535237}
-  - component: {fileID: 674535236}
   m_Layer: 0
   m_Name: BeltPiece (41)
   m_TagString: Untagged
@@ -4282,27 +3860,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 470629065}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &674535236
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 674535234}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &674535237
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4362,6 +3919,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 687208677}
+  - component: {fileID: 687208678}
   m_Layer: 0
   m_Name: ConveyorBelt
   m_TagString: Untagged
@@ -4386,6 +3944,27 @@ Transform:
   - {fileID: 470629065}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &687208678
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 687208676}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 20, y: 1, z: 50}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &692139810
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4471,7 +4050,6 @@ GameObject:
   - component: {fileID: 696069415}
   - component: {fileID: 696069418}
   - component: {fileID: 696069417}
-  - component: {fileID: 696069416}
   m_Layer: 0
   m_Name: BeltPiece (11)
   m_TagString: Untagged
@@ -4494,27 +4072,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1624443668}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &696069416
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 696069414}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &696069417
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4773,7 +4330,6 @@ GameObject:
   - component: {fileID: 728643426}
   - component: {fileID: 728643429}
   - component: {fileID: 728643428}
-  - component: {fileID: 728643427}
   m_Layer: 0
   m_Name: BeltPiece (24)
   m_TagString: Untagged
@@ -4796,27 +4352,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1624443668}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &728643427
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 728643425}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &728643428
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4878,7 +4413,6 @@ GameObject:
   - component: {fileID: 743991534}
   - component: {fileID: 743991537}
   - component: {fileID: 743991536}
-  - component: {fileID: 743991535}
   m_Layer: 0
   m_Name: BeltPiece (13)
   m_TagString: Untagged
@@ -4901,27 +4435,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1624443668}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &743991535
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 743991533}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &743991536
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4983,7 +4496,6 @@ GameObject:
   - component: {fileID: 749345720}
   - component: {fileID: 749345723}
   - component: {fileID: 749345722}
-  - component: {fileID: 749345721}
   m_Layer: 0
   m_Name: BeltPiece (6)
   m_TagString: Untagged
@@ -5006,27 +4518,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1624443668}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &749345721
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 749345719}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &749345722
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5088,7 +4579,6 @@ GameObject:
   - component: {fileID: 814260407}
   - component: {fileID: 814260410}
   - component: {fileID: 814260409}
-  - component: {fileID: 814260408}
   m_Layer: 0
   m_Name: BeltPiece (39)
   m_TagString: Untagged
@@ -5111,27 +4601,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 470629065}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &814260408
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 814260406}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &814260409
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5242,7 +4711,6 @@ GameObject:
   - component: {fileID: 876169140}
   - component: {fileID: 876169143}
   - component: {fileID: 876169142}
-  - component: {fileID: 876169141}
   m_Layer: 0
   m_Name: BeltPiece (24)
   m_TagString: Untagged
@@ -5265,27 +4733,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 470629065}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &876169141
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 876169139}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &876169142
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5701,7 +5148,6 @@ GameObject:
   - component: {fileID: 898600267}
   - component: {fileID: 898600270}
   - component: {fileID: 898600269}
-  - component: {fileID: 898600268}
   m_Layer: 0
   m_Name: BeltPiece (13)
   m_TagString: Untagged
@@ -5724,27 +5170,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 470629065}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &898600268
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 898600266}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &898600269
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5890,7 +5315,6 @@ GameObject:
   - component: {fileID: 909665403}
   - component: {fileID: 909665406}
   - component: {fileID: 909665405}
-  - component: {fileID: 909665404}
   m_Layer: 0
   m_Name: BeltPiece (26)
   m_TagString: Untagged
@@ -5913,27 +5337,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1624443668}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &909665404
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 909665402}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &909665405
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6069,7 +5472,6 @@ GameObject:
   - component: {fileID: 915553973}
   - component: {fileID: 915553976}
   - component: {fileID: 915553975}
-  - component: {fileID: 915553974}
   m_Layer: 0
   m_Name: BeltPiece (21)
   m_TagString: Untagged
@@ -6092,27 +5494,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1624443668}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &915553974
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 915553972}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &915553975
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6174,7 +5555,6 @@ GameObject:
   - component: {fileID: 917387751}
   - component: {fileID: 917387754}
   - component: {fileID: 917387753}
-  - component: {fileID: 917387752}
   m_Layer: 0
   m_Name: BeltPiece (1)
   m_TagString: Untagged
@@ -6197,27 +5577,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 470629065}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &917387752
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 917387750}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &917387753
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6279,7 +5638,6 @@ GameObject:
   - component: {fileID: 917464322}
   - component: {fileID: 917464325}
   - component: {fileID: 917464324}
-  - component: {fileID: 917464323}
   m_Layer: 0
   m_Name: BeltPiece (37)
   m_TagString: Untagged
@@ -6302,27 +5660,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 470629065}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &917464323
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 917464321}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &917464324
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6384,7 +5721,6 @@ GameObject:
   - component: {fileID: 920037816}
   - component: {fileID: 920037819}
   - component: {fileID: 920037818}
-  - component: {fileID: 920037817}
   m_Layer: 0
   m_Name: BeltPiece (23)
   m_TagString: Untagged
@@ -6407,27 +5743,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1624443668}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &920037817
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 920037815}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &920037818
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6489,7 +5804,6 @@ GameObject:
   - component: {fileID: 979597334}
   - component: {fileID: 979597337}
   - component: {fileID: 979597336}
-  - component: {fileID: 979597335}
   m_Layer: 0
   m_Name: BeltPiece (20)
   m_TagString: Untagged
@@ -6512,27 +5826,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 470629065}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &979597335
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 979597333}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &979597336
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6594,7 +5887,6 @@ GameObject:
   - component: {fileID: 984447890}
   - component: {fileID: 984447893}
   - component: {fileID: 984447892}
-  - component: {fileID: 984447891}
   m_Layer: 0
   m_Name: BeltPiece (38)
   m_TagString: Untagged
@@ -6617,27 +5909,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 470629065}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &984447891
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 984447889}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &984447892
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7282,7 +6553,6 @@ GameObject:
   - component: {fileID: 1038278992}
   - component: {fileID: 1038278995}
   - component: {fileID: 1038278994}
-  - component: {fileID: 1038278993}
   m_Layer: 0
   m_Name: BeltPiece (29)
   m_TagString: Untagged
@@ -7305,27 +6575,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 470629065}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1038278993
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1038278991}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1038278994
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7387,7 +6636,6 @@ GameObject:
   - component: {fileID: 1073715897}
   - component: {fileID: 1073715900}
   - component: {fileID: 1073715899}
-  - component: {fileID: 1073715898}
   m_Layer: 0
   m_Name: BeltPiece (14)
   m_TagString: Untagged
@@ -7410,27 +6658,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1624443668}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1073715898
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1073715896}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1073715899
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7481,42 +6708,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1073715896}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1074341226 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 81bb9eea30387e442899949a80011e55,
+--- !u!4 &1074341231 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 81bb9eea30387e442899949a80011e55,
     type: 3}
   m_PrefabInstance: {fileID: 1647452226}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1074341229
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1074341226}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d903e098dd164340982817bbac651db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Lives:
-    value: 3
-    onValueChanged:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 587983589}
-          m_TargetAssemblyTypeName: LifeDisplay, Assembly-CSharp
-          m_MethodName: UpdateLifeDisplay
-          m_Mode: 0
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  isRight: 0
 --- !u!1 &1123012444
 GameObject:
   m_ObjectHideFlags: 0
@@ -7652,7 +6849,6 @@ GameObject:
   - component: {fileID: 1127747748}
   - component: {fileID: 1127747751}
   - component: {fileID: 1127747750}
-  - component: {fileID: 1127747749}
   m_Layer: 0
   m_Name: BeltPiece (22)
   m_TagString: Untagged
@@ -7675,27 +6871,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1624443668}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1127747749
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1127747747}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1127747750
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7830,7 +7005,6 @@ GameObject:
   - component: {fileID: 1150921707}
   - component: {fileID: 1150921710}
   - component: {fileID: 1150921709}
-  - component: {fileID: 1150921708}
   m_Layer: 0
   m_Name: BeltPiece (21)
   m_TagString: Untagged
@@ -7853,27 +7027,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 470629065}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1150921708
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1150921706}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1150921709
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7935,7 +7088,6 @@ GameObject:
   - component: {fileID: 1161748253}
   - component: {fileID: 1161748256}
   - component: {fileID: 1161748255}
-  - component: {fileID: 1161748254}
   m_Layer: 0
   m_Name: BeltPiece (15)
   m_TagString: Untagged
@@ -7958,27 +7110,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 470629065}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1161748254
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1161748252}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1161748255
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8040,7 +7171,6 @@ GameObject:
   - component: {fileID: 1175947634}
   - component: {fileID: 1175947637}
   - component: {fileID: 1175947636}
-  - component: {fileID: 1175947635}
   m_Layer: 0
   m_Name: BeltPiece (1)
   m_TagString: Untagged
@@ -8063,27 +7193,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1624443668}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1175947635
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1175947633}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1175947636
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8145,7 +7254,6 @@ GameObject:
   - component: {fileID: 1183113662}
   - component: {fileID: 1183113665}
   - component: {fileID: 1183113664}
-  - component: {fileID: 1183113663}
   m_Layer: 0
   m_Name: BeltPiece (36)
   m_TagString: Untagged
@@ -8168,27 +7276,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1624443668}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1183113663
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1183113661}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1183113664
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8368,7 +7455,6 @@ GameObject:
   - component: {fileID: 1210472051}
   - component: {fileID: 1210472054}
   - component: {fileID: 1210472053}
-  - component: {fileID: 1210472052}
   m_Layer: 0
   m_Name: BeltPiece (29)
   m_TagString: Untagged
@@ -8391,27 +7477,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1624443668}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1210472052
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1210472050}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1210472053
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8546,7 +7611,6 @@ GameObject:
   - component: {fileID: 1220973005}
   - component: {fileID: 1220973008}
   - component: {fileID: 1220973007}
-  - component: {fileID: 1220973006}
   m_Layer: 0
   m_Name: BeltPiece (9)
   m_TagString: Untagged
@@ -8569,27 +7633,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 470629065}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1220973006
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1220973004}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1220973007
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8753,7 +7796,6 @@ GameObject:
   - component: {fileID: 1232441023}
   - component: {fileID: 1232441026}
   - component: {fileID: 1232441025}
-  - component: {fileID: 1232441024}
   m_Layer: 0
   m_Name: BeltPiece (16)
   m_TagString: Untagged
@@ -8776,27 +7818,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1624443668}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1232441024
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1232441022}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1232441025
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8858,7 +7879,6 @@ GameObject:
   - component: {fileID: 1237128103}
   - component: {fileID: 1237128106}
   - component: {fileID: 1237128105}
-  - component: {fileID: 1237128104}
   m_Layer: 0
   m_Name: BeltPiece (12)
   m_TagString: Untagged
@@ -8881,27 +7901,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1624443668}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1237128104
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1237128102}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1237128105
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8963,7 +7962,6 @@ GameObject:
   - component: {fileID: 1266358764}
   - component: {fileID: 1266358767}
   - component: {fileID: 1266358766}
-  - component: {fileID: 1266358765}
   m_Layer: 0
   m_Name: BeltPiece (17)
   m_TagString: Untagged
@@ -8986,27 +7984,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1624443668}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1266358765
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1266358763}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1266358766
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9068,7 +8045,6 @@ GameObject:
   - component: {fileID: 1289171210}
   - component: {fileID: 1289171213}
   - component: {fileID: 1289171212}
-  - component: {fileID: 1289171211}
   m_Layer: 0
   m_Name: BeltPiece (25)
   m_TagString: Untagged
@@ -9091,27 +8067,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1624443668}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1289171211
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1289171209}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1289171212
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9173,7 +8128,6 @@ GameObject:
   - component: {fileID: 1324551023}
   - component: {fileID: 1324551026}
   - component: {fileID: 1324551025}
-  - component: {fileID: 1324551024}
   m_Layer: 0
   m_Name: BeltPiece (16)
   m_TagString: Untagged
@@ -9196,27 +8150,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 470629065}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1324551024
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1324551022}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1324551025
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9278,7 +8211,6 @@ GameObject:
   - component: {fileID: 1342483876}
   - component: {fileID: 1342483879}
   - component: {fileID: 1342483878}
-  - component: {fileID: 1342483877}
   m_Layer: 0
   m_Name: BeltPiece (11)
   m_TagString: Untagged
@@ -9301,27 +8233,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 470629065}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1342483877
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1342483875}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1342483878
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9525,7 +8436,6 @@ GameObject:
   - component: {fileID: 1352806659}
   - component: {fileID: 1352806662}
   - component: {fileID: 1352806661}
-  - component: {fileID: 1352806660}
   m_Layer: 0
   m_Name: BeltPiece (25)
   m_TagString: Untagged
@@ -9548,27 +8458,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 470629065}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1352806660
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1352806658}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1352806661
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9630,7 +8519,6 @@ GameObject:
   - component: {fileID: 1362100709}
   - component: {fileID: 1362100712}
   - component: {fileID: 1362100711}
-  - component: {fileID: 1362100710}
   m_Layer: 0
   m_Name: BeltPiece (14)
   m_TagString: Untagged
@@ -9653,27 +8541,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 470629065}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1362100710
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1362100708}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1362100711
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9735,7 +8602,6 @@ GameObject:
   - component: {fileID: 1365685031}
   - component: {fileID: 1365685034}
   - component: {fileID: 1365685033}
-  - component: {fileID: 1365685032}
   m_Layer: 0
   m_Name: BeltPiece (28)
   m_TagString: Untagged
@@ -9758,27 +8624,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 470629065}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1365685032
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1365685030}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1365685033
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9840,7 +8685,6 @@ GameObject:
   - component: {fileID: 1401130400}
   - component: {fileID: 1401130403}
   - component: {fileID: 1401130402}
-  - component: {fileID: 1401130401}
   m_Layer: 0
   m_Name: BeltPiece (34)
   m_TagString: Untagged
@@ -9863,27 +8707,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1624443668}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1401130401
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1401130399}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1401130402
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9945,7 +8768,6 @@ GameObject:
   - component: {fileID: 1418022440}
   - component: {fileID: 1418022443}
   - component: {fileID: 1418022442}
-  - component: {fileID: 1418022441}
   m_Layer: 0
   m_Name: BeltPiece (7)
   m_TagString: Untagged
@@ -9968,27 +8790,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 470629065}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1418022441
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1418022439}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1418022442
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10187,6 +8988,112 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1463404728}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1472382599
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1472382601}
+  - component: {fileID: 1472382600}
+  - component: {fileID: 1472382602}
+  - component: {fileID: 1472382603}
+  m_Layer: 0
+  m_Name: Player
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1472382600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1472382599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d903e098dd164340982817bbac651db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Lives:
+    value: 3
+    onValueChanged:
+      m_PersistentCalls:
+        m_Calls: []
+  virCam: {fileID: 53691415}
+  isRight: 0
+  isDodge: 0
+  speed: 10
+--- !u!4 &1472382601
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1472382599}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1074341231}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1472382602
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1472382599}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.3
+  m_Height: 6
+  m_Direction: 1
+  m_Center: {x: 0, y: 3, z: 0}
+--- !u!54 &1472382603
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1472382599}
+  serializedVersion: 4
+  m_Mass: 20
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 80
+  m_CollisionDetection: 0
 --- !u!1 &1480582691
 GameObject:
   m_ObjectHideFlags: 0
@@ -10198,7 +9105,6 @@ GameObject:
   - component: {fileID: 1480582692}
   - component: {fileID: 1480582695}
   - component: {fileID: 1480582694}
-  - component: {fileID: 1480582693}
   m_Layer: 0
   m_Name: BeltPiece (30)
   m_TagString: Untagged
@@ -10221,27 +9127,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1624443668}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1480582693
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1480582691}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1480582694
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10292,6 +9177,119 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1480582691}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1480774383
+GameObject:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1480774384}
+  - component: {fileID: 1480774387}
+  - component: {fileID: 1480774386}
+  - component: {fileID: 1480774385}
+  - component: {fileID: 1480774388}
+  m_Layer: 0
+  m_Name: cm
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1480774384
+Transform:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1480774383}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 53691416}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1480774385
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1480774383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa7155796051b734daa718462081dc5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_BindingMode: 1
+  m_FollowOffset: {x: 0, y: 0, z: -10}
+  m_XDamping: 1
+  m_YDamping: 1
+  m_ZDamping: 1
+  m_AngularDampingMode: 0
+  m_PitchDamping: 0
+  m_YawDamping: 0
+  m_RollDamping: 0
+  m_AngularDamping: 0
+--- !u!114 &1480774386
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1480774383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4044717213e31446939f7bd49c896ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TrackedObjectOffset: {x: 0, y: 0, z: 0}
+  m_LookaheadTime: 0
+  m_LookaheadSmoothing: 0
+  m_LookaheadIgnoreY: 0
+  m_HorizontalDamping: 0.5
+  m_VerticalDamping: 0.5
+  m_ScreenX: 0.5
+  m_ScreenY: 0.5
+  m_DeadZoneWidth: 0
+  m_DeadZoneHeight: 0
+  m_SoftZoneWidth: 0.8
+  m_SoftZoneHeight: 0.8
+  m_BiasX: 0
+  m_BiasY: 0
+  m_CenterOnActivate: 1
+--- !u!114 &1480774387
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1480774383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1480774388
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1480774383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+  m_PivotOffset: {x: 0, y: 0, z: 0}
+  m_AmplitudeGain: 0
+  m_FrequencyGain: 1
+  mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &1537957866
 GameObject:
   m_ObjectHideFlags: 0
@@ -10303,7 +9301,6 @@ GameObject:
   - component: {fileID: 1537957867}
   - component: {fileID: 1537957870}
   - component: {fileID: 1537957869}
-  - component: {fileID: 1537957868}
   m_Layer: 0
   m_Name: BeltPiece (34)
   m_TagString: Untagged
@@ -10326,27 +9323,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 470629065}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1537957868
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1537957866}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1537957869
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10899,7 +9875,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1472382601}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 81bb9eea30387e442899949a80011e55,
         type: 3}
@@ -10924,7 +9900,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 81bb9eea30387e442899949a80011e55,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.67
+      value: 0.17000008
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 81bb9eea30387e442899949a80011e55,
         type: 3}
@@ -10939,7 +9915,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 81bb9eea30387e442899949a80011e55,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 81bb9eea30387e442899949a80011e55,
         type: 3}
@@ -10949,7 +9925,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 81bb9eea30387e442899949a80011e55,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 81bb9eea30387e442899949a80011e55,
         type: 3}
@@ -10989,7 +9965,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 81bb9eea30387e442899949a80011e55,
         type: 3}
       propertyPath: m_Name
-      value: Player
+      value: PlayerBody
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 81bb9eea30387e442899949a80011e55,
         type: 3}
@@ -11003,11 +9979,7 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1738916505}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 81bb9eea30387e442899949a80011e55,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1074341229}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81bb9eea30387e442899949a80011e55, type: 3}
 --- !u!1 &1659899372
 GameObject:
@@ -11065,7 +10037,6 @@ GameObject:
   - component: {fileID: 1668368623}
   - component: {fileID: 1668368626}
   - component: {fileID: 1668368625}
-  - component: {fileID: 1668368624}
   m_Layer: 0
   m_Name: BeltPiece (12)
   m_TagString: Untagged
@@ -11088,27 +10059,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 470629065}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1668368624
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1668368622}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1668368625
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11327,7 +10277,6 @@ GameObject:
   - component: {fileID: 1688113893}
   - component: {fileID: 1688113896}
   - component: {fileID: 1688113895}
-  - component: {fileID: 1688113894}
   m_Layer: 0
   m_Name: BeltPiece (33)
   m_TagString: Untagged
@@ -11350,27 +10299,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1624443668}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1688113894
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1688113892}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1688113895
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11432,7 +10360,6 @@ GameObject:
   - component: {fileID: 1689343179}
   - component: {fileID: 1689343182}
   - component: {fileID: 1689343181}
-  - component: {fileID: 1689343180}
   m_Layer: 0
   m_Name: BeltPiece (7)
   m_TagString: Untagged
@@ -11455,27 +10382,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1624443668}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1689343180
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1689343178}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1689343181
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11568,7 +10474,6 @@ GameObject:
   - component: {fileID: 1723749524}
   - component: {fileID: 1723749527}
   - component: {fileID: 1723749526}
-  - component: {fileID: 1723749525}
   m_Layer: 0
   m_Name: BeltPiece (18)
   m_TagString: Untagged
@@ -11591,27 +10496,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 470629065}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1723749525
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1723749523}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1723749526
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11762,7 +10646,6 @@ GameObject:
   - component: {fileID: 1746880148}
   - component: {fileID: 1746880151}
   - component: {fileID: 1746880150}
-  - component: {fileID: 1746880149}
   m_Layer: 0
   m_Name: BeltPiece (2)
   m_TagString: Untagged
@@ -11785,27 +10668,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 470629065}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1746880149
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1746880147}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1746880150
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12133,7 +10995,6 @@ GameObject:
   - component: {fileID: 1788106988}
   - component: {fileID: 1788106991}
   - component: {fileID: 1788106990}
-  - component: {fileID: 1788106989}
   m_Layer: 0
   m_Name: BeltPiece (10)
   m_TagString: Untagged
@@ -12156,27 +11017,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1624443668}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1788106989
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1788106987}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1788106990
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12238,7 +11078,6 @@ GameObject:
   - component: {fileID: 1802673070}
   - component: {fileID: 1802673073}
   - component: {fileID: 1802673072}
-  - component: {fileID: 1802673071}
   m_Layer: 0
   m_Name: BeltPiece (41)
   m_TagString: Untagged
@@ -12261,27 +11100,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1624443668}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1802673071
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1802673069}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1802673072
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12343,7 +11161,6 @@ GameObject:
   - component: {fileID: 1809993563}
   - component: {fileID: 1809993566}
   - component: {fileID: 1809993565}
-  - component: {fileID: 1809993564}
   m_Layer: 0
   m_Name: BeltPiece (3)
   m_TagString: Untagged
@@ -12366,27 +11183,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1624443668}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1809993564
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1809993562}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1809993565
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12448,7 +11244,6 @@ GameObject:
   - component: {fileID: 1815870791}
   - component: {fileID: 1815870794}
   - component: {fileID: 1815870793}
-  - component: {fileID: 1815870792}
   m_Layer: 0
   m_Name: BeltPiece (18)
   m_TagString: Untagged
@@ -12471,27 +11266,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1624443668}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1815870792
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1815870790}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1815870793
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12553,7 +11327,6 @@ GameObject:
   - component: {fileID: 1822278201}
   - component: {fileID: 1822278204}
   - component: {fileID: 1822278203}
-  - component: {fileID: 1822278202}
   m_Layer: 0
   m_Name: BeltPiece (20)
   m_TagString: Untagged
@@ -12576,27 +11349,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1624443668}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1822278202
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1822278200}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1822278203
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12776,7 +11528,6 @@ GameObject:
   - component: {fileID: 1862616334}
   - component: {fileID: 1862616337}
   - component: {fileID: 1862616336}
-  - component: {fileID: 1862616335}
   m_Layer: 0
   m_Name: BeltPiece (19)
   m_TagString: Untagged
@@ -12799,27 +11550,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1624443668}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1862616335
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1862616333}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1862616336
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12881,7 +11611,6 @@ GameObject:
   - component: {fileID: 1862956295}
   - component: {fileID: 1862956298}
   - component: {fileID: 1862956297}
-  - component: {fileID: 1862956296}
   m_Layer: 0
   m_Name: BeltPiece (3)
   m_TagString: Untagged
@@ -12904,27 +11633,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 470629065}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1862956296
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1862956294}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1862956297
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12986,7 +11694,6 @@ GameObject:
   - component: {fileID: 1878095190}
   - component: {fileID: 1878095193}
   - component: {fileID: 1878095192}
-  - component: {fileID: 1878095191}
   m_Layer: 0
   m_Name: BeltPiece (17)
   m_TagString: Untagged
@@ -13009,27 +11716,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 470629065}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1878095191
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1878095189}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1878095192
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13091,7 +11777,6 @@ GameObject:
   - component: {fileID: 1879530987}
   - component: {fileID: 1879530990}
   - component: {fileID: 1879530989}
-  - component: {fileID: 1879530988}
   m_Layer: 0
   m_Name: BeltPiece (38)
   m_TagString: Untagged
@@ -13114,27 +11799,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1624443668}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1879530988
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1879530986}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1879530989
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13196,7 +11860,6 @@ GameObject:
   - component: {fileID: 1929641321}
   - component: {fileID: 1929641324}
   - component: {fileID: 1929641323}
-  - component: {fileID: 1929641322}
   m_Layer: 0
   m_Name: BeltPiece (32)
   m_TagString: Untagged
@@ -13219,27 +11882,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 470629065}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1929641322
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1929641320}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1929641323
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13524,7 +12166,6 @@ GameObject:
   - component: {fileID: 1994371880}
   - component: {fileID: 1994371883}
   - component: {fileID: 1994371882}
-  - component: {fileID: 1994371881}
   m_Layer: 0
   m_Name: BeltPiece (19)
   m_TagString: Untagged
@@ -13547,27 +12188,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 470629065}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1994371881
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1994371879}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1994371882
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13682,7 +12302,6 @@ GameObject:
   - component: {fileID: 2053132185}
   - component: {fileID: 2053132188}
   - component: {fileID: 2053132187}
-  - component: {fileID: 2053132186}
   m_Layer: 0
   m_Name: BeltPiece (26)
   m_TagString: Untagged
@@ -13705,27 +12324,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 470629065}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &2053132186
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2053132184}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &2053132187
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13787,7 +12385,6 @@ GameObject:
   - component: {fileID: 2067158407}
   - component: {fileID: 2067158410}
   - component: {fileID: 2067158409}
-  - component: {fileID: 2067158408}
   m_Layer: 0
   m_Name: BeltPiece (40)
   m_TagString: Untagged
@@ -13810,27 +12407,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1624443668}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &2067158408
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2067158406}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &2067158409
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13892,7 +12468,6 @@ GameObject:
   - component: {fileID: 2084849004}
   - component: {fileID: 2084849007}
   - component: {fileID: 2084849006}
-  - component: {fileID: 2084849005}
   m_Layer: 0
   m_Name: BeltPiece (5)
   m_TagString: Untagged
@@ -13915,27 +12490,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 470629065}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &2084849005
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2084849003}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &2084849006
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13997,7 +12551,6 @@ GameObject:
   - component: {fileID: 2098416036}
   - component: {fileID: 2098416039}
   - component: {fileID: 2098416038}
-  - component: {fileID: 2098416037}
   m_Layer: 0
   m_Name: BeltPiece (28)
   m_TagString: Untagged
@@ -14020,27 +12573,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1624443668}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &2098416037
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2098416035}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &2098416038
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14102,7 +12634,6 @@ GameObject:
   - component: {fileID: 2106997971}
   - component: {fileID: 2106997974}
   - component: {fileID: 2106997973}
-  - component: {fileID: 2106997972}
   m_Layer: 0
   m_Name: BeltPiece (23)
   m_TagString: Untagged
@@ -14125,27 +12656,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 470629065}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &2106997972
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2106997970}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &2106997973
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14474,7 +12984,6 @@ GameObject:
   - component: {fileID: 2140590206}
   - component: {fileID: 2140590209}
   - component: {fileID: 2140590208}
-  - component: {fileID: 2140590207}
   m_Layer: 0
   m_Name: BeltPiece (40)
   m_TagString: Untagged
@@ -14497,27 +13006,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 470629065}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &2140590207
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2140590205}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &2140590208
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14579,7 +13067,6 @@ GameObject:
   - component: {fileID: 2146651794}
   - component: {fileID: 2146651797}
   - component: {fileID: 2146651796}
-  - component: {fileID: 2146651795}
   m_Layer: 0
   m_Name: BeltPiece (36)
   m_TagString: Untagged
@@ -14602,27 +13089,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 470629065}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &2146651795
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2146651793}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &2146651796
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14684,7 +13150,6 @@ SceneRoots:
   - {fileID: 1944205972}
   - {fileID: 1643137492}
   - {fileID: 687208677}
-  - {fileID: 1647452226}
   - {fileID: 1037799490}
   - {fileID: 1659899373}
   - {fileID: 509430492}
@@ -14692,3 +13157,5 @@ SceneRoots:
   - {fileID: 1230190992}
   - {fileID: 1680050321}
   - {fileID: 299969651}
+  - {fileID: 1472382601}
+  - {fileID: 53691416}
