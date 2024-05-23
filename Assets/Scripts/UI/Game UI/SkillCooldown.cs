@@ -51,6 +51,7 @@ public class SkillCooldown : MonoBehaviour
 
         if (knifeCooldown <= 0)
         {
+            knifeCooldownCircle.fillAmount = 1;
             knifeCooldownTxt.enabled = false;
             isKnifeThrown = false;
             knifeCooldown = 0;
@@ -67,6 +68,7 @@ public class SkillCooldown : MonoBehaviour
 
         if (rollerCooldown <= 0)
         {
+            rollerCooldownCircle.fillAmount = 1;
             rollerCooldownTxt.enabled = false;
             isRollerRolled = false;
             rollerCooldown = 0;
