@@ -62,7 +62,13 @@ public class Player : MonoBehaviour
         }
 
         // If player is hit by a knife or a roller
-        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D))
+        
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log(collision.gameObject.tag);
+        if (collision.gameObject.tag == "Knife")
         {
             StartCoroutine(Hit());
         }
