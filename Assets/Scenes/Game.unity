@@ -181,7 +181,7 @@ Transform:
   m_GameObject: {fileID: 3350358}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2, y: 8, z: -15}
+  m_LocalPosition: {x: -1, y: 0, z: -30}
   m_LocalScale: {x: 5, y: 5, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13840,7 +13840,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   knifePool: {fileID: 1123012446}
   pinPool: {fileID: 382295326}
-  knifeXPos: 0
+  knifeSpawnIndex: 0
   leftAimPoint: {fileID: 1559919732}
   rightAimPoint: {fileID: 3350359}
   startTime: 0
@@ -15077,7 +15077,7 @@ Transform:
   m_GameObject: {fileID: 1559919731}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2, y: 8, z: -15}
+  m_LocalPosition: {x: 1, y: 0, z: -30}
   m_LocalScale: {x: 5, y: 5, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -18069,7 +18069,7 @@ Transform:
   m_GameObject: {fileID: 1944205968}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 14.72, z: -17.5}
+  m_LocalPosition: {x: 0.5, y: 14.72, z: -36.9}
   m_LocalScale: {x: 61.85356, y: 37.041546, z: 2.7591205}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -18191,10 +18191,10 @@ MonoBehaviour:
   state: 0
   knifeCooldown: 2
   pinCooldown: 5
-  knifeSpeed: 100
-  knifeRoateSpeed: 800
-  pinSpeed: 100
-  pinRotateSpeed: 1500
+  knifeSpeed: 50
+  knifeRoateSpeed: 600
+  pinSpeed: 50
+  pinRotateSpeed: 800
   rageTransforming: 0
 --- !u!4 &2048560594
 Transform:
