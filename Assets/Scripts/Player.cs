@@ -14,9 +14,9 @@ public class Player : MonoBehaviour
 
     public CinemachineVirtualCamera virCam;
     CinemachineBasicMultiChannelPerlin noiseParam;
-    public GameObject Body;
-    public GameObject Corpse;
-
+    public GameObject runningBody;
+    public GameObject corpse;
+    CapsuleCollider playerCollider;
 
     public bool isRight, isDodge;
     public float speed = 20;
@@ -38,10 +38,11 @@ public class Player : MonoBehaviour
         potatoAnimator = GetComponent<Animator>();
         rigid = GetComponent<Rigidbody>();
         noiseParam = virCam.GetCinemachineComponent<Cinemachine.CinemachineBasicMultiChannelPerlin>();
-
+        playerCollider = GetComponent<CapsuleCollider>();
         
-        Body.SetActive(true); 
-        Corpse.SetActive(false);
+        runningBody.SetActive(true);
+        corpse.SetActive(false);
+        playerCollider.enabled = true;
 
         transform.position = rightPos;
     }
@@ -49,26 +50,32 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //transform.Translate(Vector3.MoveTowards(transform.position, (isRight?rightPos:leftPos), 0.1f).x, 0.5f, 0);
-
-
-        if (isRight && transform.position.x < rightPos.x)
+        if (!gameOver)
         {
-            transform.position += Vector3.right * Time.deltaTime * speed;
+            if (isRight && transform.position.x < rightPos.x)
+            {
+                transform.position += Vector3.right * Time.deltaTime * speed;
+            }
+            else if (!isRight && transform.position.x > leftPos.x)
+            {
+                transform.position += Vector3.left * Time.deltaTime * speed;
+            }
+
+
+
+            if (Input.GetKeyDown(KeyCode.Space) && !isDodge)
+            {
+                //potatoAnimator.SetBool("isJump", true);
+
+                StartCoroutine(DodgeTime());
+            }
         }
-        else if (!isRight && transform.position.x > leftPos.x)
+        else
         {
-            transform.position += Vector3.left * Time.deltaTime * speed;
-        }
-    
-        
-
-        if (Input.GetKeyDown(KeyCode.Space)&&!isDodge)
-        {
-            //potatoAnimator.SetBool("isJump", true);
+            transform.position += Vector3.forward * Time.deltaTime * speed;
             
-            StartCoroutine(DodgeTime());
         }
+        
 
         
 
@@ -81,8 +88,12 @@ public class Player : MonoBehaviour
         Debug.Log(collision.gameObject.tag);
         if (collision.gameObject.tag == "Knife")
         {
-            
             StartCoroutine(Hit());
+            if(Lives.Value <= 0)
+            {
+                gameOver = true;
+                StartCoroutine(Death());
+            }
         }
     }
 
@@ -101,14 +112,15 @@ public class Player : MonoBehaviour
     {
         noiseParam.m_AmplitudeGain = 12;
         Lives.Value--;
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.3f);
         noiseParam.m_AmplitudeGain = 0;
     }
 
     IEnumerator Death()
     {
-        Body.SetActive(false);
-        Corpse.SetActive(true);
+        playerCollider.enabled = false;
+        runningBody.SetActive(false);
+        corpse.SetActive(true);
         yield return new WaitForSeconds(0f);
     }
 }
