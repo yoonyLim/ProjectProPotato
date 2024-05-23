@@ -5,6 +5,7 @@ using UnityEngine;
 public class ThrowKnife : MonoBehaviour
 {
     Rigidbody body;
+    private bool isPlayerAlreadyHit;
 
     
     void Start()

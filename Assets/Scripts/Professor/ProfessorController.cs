@@ -7,7 +7,7 @@ public class ProfessorController : MonoBehaviour
 {
     [SerializeField] KnifePooler knifePool;
     [SerializeField] PinPooler pinPool;
-    [SerializeField] SkillCooldown UISkillCooldown;
+    [SerializeField] SkillCooldown SkillUI;
 
     Animator anim;
     bool throwReady = true;
@@ -85,7 +85,7 @@ public class ProfessorController : MonoBehaviour
         if (throwReady)
         {
             // alert UI
-            UISkillCooldown.AlertKnifeCooldownUI();
+            SkillUI.AlertKnifeCooldownUI();
 
             knifeSpawnIndex = SpawnKnife();
 
@@ -118,7 +118,7 @@ public class ProfessorController : MonoBehaviour
         if ( rollReady)
         {
             // alert UI
-            UISkillCooldown.AlertRollerCooldownUI();
+            SkillUI.AlertRollerCooldownUI();
 
             SpawnPin();
 
