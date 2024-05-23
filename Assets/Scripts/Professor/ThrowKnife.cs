@@ -20,12 +20,12 @@ public class ThrowKnife : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (FindObjectOfType<ProfessorController>().knifeXPos > 0)
+        if (FindObjectOfType<ProfessorController>().knifeSpawnIndex == 0)
         {
             body.velocity = (FindObjectOfType<ProfessorController>().leftAimPoint.position - transform.position).normalized
                 * GameManager.instance.knifeSpeed;
         }
-        else if (FindObjectOfType<ProfessorController>().knifeXPos < 0)
+        else if (FindObjectOfType<ProfessorController>().knifeSpawnIndex == 1)
         {
             body.velocity = (FindObjectOfType<ProfessorController>().rightAimPoint.position - transform.position).normalized
                 * GameManager.instance.knifeSpeed;

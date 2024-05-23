@@ -26,15 +26,16 @@ public class KnifePooler : MonoBehaviour
         }
     }
 
-    public GameObject GetPooledObject()
+    public (GameObject, int) GetPooledObject()
     {
         foreach (GameObject obj in pool)
         {
             if (!obj.activeInHierarchy)
             {
-                obj.transform.position = spawnPoints[Random.Range(0, spawnPoints.Count)].position;
+                int randomIndex = Random.Range(0, spawnPoints.Count);
+                obj.transform.position = spawnPoints[randomIndex].position;
                 obj.transform.rotation = Quaternion.Euler(-90f, -90f, 0f);
-                return obj;
+                return (obj, randomIndex);
             }
         }
 
@@ -42,14 +43,15 @@ public class KnifePooler : MonoBehaviour
 
     }
 
-    private GameObject CreateNewObject()
+    private (GameObject, int) CreateNewObject()
     {
+        int randomIndex = Random.Range(0, spawnPoints.Count);
         GameObject obj = Instantiate(prefab, transform);
-        obj.transform.position = spawnPoints[Random.Range(0, spawnPoints.Count)].position;
+        obj.transform.position = spawnPoints[randomIndex].position;
         obj.transform.rotation = Quaternion.Euler(-90f, -90f, 0f);
         obj.SetActive(false);
         pool.Add(obj);
-        return obj;
+        return (obj, randomIndex);
     }
 
 }

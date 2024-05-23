@@ -11,7 +11,7 @@ public class ProfessorController : MonoBehaviour
     bool throwReady = true;
     bool rollReady = true;
 
-    public float knifeXPos;
+    public int knifeSpawnIndex;
     public Transform leftAimPoint;
     public Transform rightAimPoint;
 
@@ -82,15 +82,15 @@ public class ProfessorController : MonoBehaviour
     {
         if (throwReady)
         {
-            knifeXPos = SpawnKnife();
+            knifeSpawnIndex = SpawnKnife();
 
-            if (knifeXPos > 0)
+            if (knifeSpawnIndex == 0)
             {
                 anim.SetTrigger("LeftThrow");
                 AudioManager.instance.PlayThrowVoice();
                 StartCoroutine(PlayThrowSound(0.1f));
             }
-            else if (knifeXPos < 0)
+            else if (knifeSpawnIndex == 1)
             {
                 anim.SetTrigger("RightThrow");
                 AudioManager.instance.PlayThrowVoice();
@@ -121,11 +121,13 @@ public class ProfessorController : MonoBehaviour
         }
     }
 
-    float SpawnKnife()
+    int SpawnKnife()
     {
-        GameObject knife = knifePool.GetPooledObject();
+        var objTuple = knifePool.GetPooledObject();
+        GameObject knife = objTuple.Item1;
+        int index = objTuple.Item2;
         StartCoroutine(SpawnKnifeDelay(knife));
-        return knife.transform.position.x;
+        return index;
     }
 
     IEnumerator SpawnKnifeDelay(GameObject knife)
