@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 using UnityEditor.Experimental.GraphView;
+using Unity.VisualScripting;
 
 public class Player : MonoBehaviour
 {
@@ -13,10 +14,13 @@ public class Player : MonoBehaviour
 
     public CinemachineVirtualCamera virCam;
     CinemachineBasicMultiChannelPerlin noiseParam;
-    
+    public GameObject Body;
+    public GameObject Corpse;
+
 
     public bool isRight, isDodge;
     public float speed = 20;
+    public bool gameOver;
 
     private Vector3 rightPos = Vector3.right * 5 + Vector3.up * 0.5f;
     private Vector3 leftPos = Vector3.left * 5 + Vector3.up * 0.5f;
@@ -29,10 +33,15 @@ public class Player : MonoBehaviour
 
         isRight = true;
         isDodge = false;
+        gameOver = false;
 
         potatoAnimator = GetComponent<Animator>();
         rigid = GetComponent<Rigidbody>();
         noiseParam = virCam.GetCinemachineComponent<Cinemachine.CinemachineBasicMultiChannelPerlin>();
+
+        
+        Body.SetActive(true); 
+        Corpse.SetActive(false);
 
         transform.position = rightPos;
     }
@@ -61,15 +70,18 @@ public class Player : MonoBehaviour
             StartCoroutine(DodgeTime());
         }
 
-        // If player is hit by a knife or a roller
         
-    }
 
-    private void OnCollisionEnter(Collision collision)
+        // If player is hit by a knife or a roller
+
+    }
+    
+    private void OnTriggerEnter(Collider collision)
     {
         Debug.Log(collision.gameObject.tag);
         if (collision.gameObject.tag == "Knife")
         {
+            
             StartCoroutine(Hit());
         }
     }
@@ -91,5 +103,12 @@ public class Player : MonoBehaviour
         Lives.Value--;
         yield return new WaitForSeconds(0.5f);
         noiseParam.m_AmplitudeGain = 0;
+    }
+
+    IEnumerator Death()
+    {
+        Body.SetActive(false);
+        Corpse.SetActive(true);
+        yield return new WaitForSeconds(0f);
     }
 }
