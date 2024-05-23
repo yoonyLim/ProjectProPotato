@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     public float pinRotateSpeed = 1500f;
 
     public bool rageTransforming = false;
+
     private void Awake()
     {
         if (instance == null)
@@ -33,9 +34,8 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void UpdateElapsedTime(float val)
     {
-        elapsedTime += Time.deltaTime;
+        elapsedTime = val;
     }
 }
