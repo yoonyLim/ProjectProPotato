@@ -62,7 +62,10 @@ public class Player : MonoBehaviour
         }
 
         // If player is hit by a knife or a roller
-        
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            Lives.Value--;
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
