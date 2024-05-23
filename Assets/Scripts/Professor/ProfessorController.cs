@@ -15,7 +15,9 @@ public class ProfessorController : MonoBehaviour
     public Transform leftAimPoint;
     public Transform rightAimPoint;
 
-
+    public float startTime;
+    public float throwKeyTime = 0.5f;
+    bool isHoldingA = false;
 
 
 
@@ -31,13 +33,26 @@ public class ProfessorController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.A))
             {
-                ThrowKnife();
+                isHoldingA = true;
+                startTime = Time.time;
             }
-
-            if (Input.GetKeyDown(KeyCode.D))
+            if (Input.GetKeyUp(KeyCode.A))
             {
-                RollPin();
-            }   
+                float timeDiff = Time.time - startTime;
+                if (timeDiff <= throwKeyTime)
+                {
+                    ThrowKnife();
+                }
+                isHoldingA = false;
+            }
+            if (Input.GetKey(KeyCode.A) && isHoldingA)
+            {
+                if (Time.time - startTime > 1f)
+                {
+                    RollPin();
+                }
+                
+            } 
         }
         
 
