@@ -3,13 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using UnityEngine.SceneManagement;
 
 public class BlowGaugeController : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI percentTxt = null;
     [SerializeField] private Slider blowGauge = null;
-    [SerializeField] private LoadingController loadSceneManager = null;
 
     private float unitPercent = 1.0f;
 
@@ -41,7 +39,7 @@ public class BlowGaugeController : MonoBehaviour
 
         if (blowGauge.value == 100.0f)
         {
-            loadSceneManager.LoadScene(1);
+            LoadingController.instance.LoadScene(1);
         }
     }
 }
