@@ -7,10 +7,13 @@ using TMPro;
 
 public class LoadingController : MonoBehaviour
 {
+    public static LoadingController instance;
+
     [SerializeField] private TextMeshProUGUI percentTxt = null;
     [SerializeField] private Slider loadingBar;
     [SerializeField] private GameObject loadingScreen;
     [SerializeField] private GameObject mainMenu;
+    [SerializeField] Animator transitionAnim;
 
     private float unitPercent = 1.0f;
 
@@ -22,19 +25,40 @@ public class LoadingController : MonoBehaviour
 
     public void LoadScene(int sceneId)
     {
-        loadingScreen.SetActive(true);
-        mainMenu.SetActive(false);
+        if (sceneId == 1)
+        {
+            loadingScreen.SetActive(true);
+            mainMenu.SetActive(false);
+        }
+
         StartCoroutine(LoadSceneAsync(sceneId));
     }
 
     IEnumerator LoadSceneAsync(int sceneId)
     {
+        transitionAnim.SetTrigger("Fade In");
+
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneId);
 
-        while (!operation.isDone)
+        while (!operation.isDone && sceneId == 1)
         {
             loadingBar.value = operation.progress * 100;
             yield return null;
+        }
+
+        transitionAnim.SetTrigger("Fade Out");
+    }
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        } 
+        else
+        {
+            Destroy(gameObject);
         }
     }
 }

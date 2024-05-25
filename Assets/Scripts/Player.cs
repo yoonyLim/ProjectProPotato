@@ -7,6 +7,8 @@ using Unity.VisualScripting;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] ResultDisplay resultDisplay;
+
     [SerializeField] GenericObserver<int> Lives = new GenericObserver<int>(3);
 
     Animator potatoAnimator;
@@ -107,14 +109,12 @@ public class Player : MonoBehaviour
     IEnumerator Hit()
     {
         isGracePeriod = true;
-        print("graced");
         noiseParam.m_AmplitudeGain = 12;
         Lives.Value--;
         yield return new WaitForSeconds(0.3f);
         noiseParam.m_AmplitudeGain = 0;
         yield return new WaitForSeconds(1);
         isGracePeriod = false;
-        print("ungraced");
     }
 
     IEnumerator Death()
@@ -122,6 +122,7 @@ public class Player : MonoBehaviour
         playerCollider.enabled = false;
         runningBody.SetActive(false);
         corpse.SetActive(true);
+        resultDisplay.UpdateWinner("±³¼ö´Ô");
         yield return new WaitForSeconds(0f);
     }
 }

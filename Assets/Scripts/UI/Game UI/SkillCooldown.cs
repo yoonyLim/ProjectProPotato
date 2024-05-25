@@ -13,8 +13,6 @@ public class SkillCooldown : MonoBehaviour
     [SerializeField] private Image knifeSprite;
     [SerializeField] private Image rollerSprite;
 
-    private float unitCooldown = 1.0f;
-
     private float knifeCooldown = 0f;
     private float rollerCooldown = 0f;
 
@@ -39,47 +37,46 @@ public class SkillCooldown : MonoBehaviour
         rollerCooldownTxt.enabled = false;
     }
 
-    // Update is called once per frame
+    private void CooldownSkill(Image progress, float cooldown, float curCooldown, Image sprite, TextMeshProUGUI txt)
+    {
+        progress.fillAmount = (cooldown - curCooldown) / cooldown;
+        // tint color
+        sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, 0.5f);
+        // update text
+        txt.text = Mathf.Ceil(curCooldown).ToString("0");
+        txt.enabled = true;
+    }
+
+    private void ResetCooldown(Image progress, Image sprite, TextMeshProUGUI txt, ref bool isUsed)
+    {
+        progress.fillAmount = 1;
+        sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, 1);
+        txt.enabled = false;
+        isUsed = false;
+    }
+
     void Update()
     {
         if (isKnifeThrown)
         {
-            knifeCooldownCircle.fillAmount = (GameManager.instance.knifeCooldown - knifeCooldown) / GameManager.instance.knifeCooldown;
             knifeCooldown -= Time.deltaTime;
-            // tint sprite
-            knifeSprite.color = new Color(knifeSprite.color.r, knifeSprite.color.g, knifeSprite.color.b, 0.5f);
-            // update text
-            knifeCooldownTxt.text = (knifeCooldown * unitCooldown).ToString("0");
-            knifeCooldownTxt.enabled = true;
+            CooldownSkill(knifeCooldownCircle, GameManager.instance.knifeCooldown, knifeCooldown, knifeSprite, knifeCooldownTxt);
         }
 
         if (knifeCooldown <= 0)
         {
-            knifeCooldownCircle.fillAmount = 1;
-            knifeSprite.color = new Color(knifeSprite.color.r, knifeSprite.color.g, knifeSprite.color.b, 1);
-            knifeCooldownTxt.enabled = false;
-            isKnifeThrown = false;
-            knifeCooldown = 0;
+            ResetCooldown(knifeCooldownCircle, knifeSprite, knifeCooldownTxt, ref isKnifeThrown);
         }
 
         if (isRollerRolled)
         {
-            rollerCooldownCircle.fillAmount = (GameManager.instance.pinCooldown - rollerCooldown) / GameManager.instance.pinCooldown;
             rollerCooldown -= Time.deltaTime;
-            // tint sprite
-            rollerSprite.color = new Color(rollerSprite.color.r, rollerSprite.color.g, rollerSprite.color.b, 0.5f);
-            // update text
-            rollerCooldownTxt.text = (rollerCooldown * unitCooldown).ToString("0");
-            rollerCooldownTxt.enabled = true;
+            CooldownSkill(rollerCooldownCircle, GameManager.instance.pinCooldown, rollerCooldown, rollerSprite, rollerCooldownTxt);
         }
 
         if (rollerCooldown <= 0)
         {
-            rollerCooldownCircle.fillAmount = 1;
-            rollerSprite.color = new Color(rollerSprite.color.r, rollerSprite.color.g, rollerSprite.color.b, 1);
-            rollerCooldownTxt.enabled = false;
-            isRollerRolled = false;
-            rollerCooldown = 0;
+            ResetCooldown(rollerCooldownCircle, rollerSprite, rollerCooldownTxt, ref isRollerRolled);
         }
     }
 }

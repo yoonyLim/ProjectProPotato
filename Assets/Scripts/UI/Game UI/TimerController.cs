@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using UnityEngine.SceneManagement;
 
 public class TimerController : MonoBehaviour
 {
+    [SerializeField] ResultDisplay resultDisplay;
+
     [SerializeField] private TextMeshProUGUI timerTxt = null;
     [SerializeField] private Slider timerBar = null;
-    [SerializeField] private static float PLAY_TIME = 90.0f;
+    
+    private const float PLAY_TIME = 90.0f;
 
     [SerializeField] GenericObserver<float> ElapsedTime = new GenericObserver<float>(0.0f);
-
-    private float unitPercent = 1.0f;
 
     public void UpdateTimerBar(float val)
     {
@@ -22,7 +22,7 @@ public class TimerController : MonoBehaviour
 
     public void UpdateTimerTxt(float val)
     {
-        float res = (PLAY_TIME - val) * unitPercent;
+        float res = (PLAY_TIME - val);
         timerTxt.text = res.ToString("0") + " SECONDS";
     }
 
@@ -33,6 +33,9 @@ public class TimerController : MonoBehaviour
 
     private void Update()
     {
-        ElapsedTime.Value += Time.deltaTime;
+        if (ElapsedTime.Value < PLAY_TIME)
+            ElapsedTime.Value += Time.deltaTime;
+        else
+            resultDisplay.UpdateWinner("°¨ÀÚ");
     }
 }

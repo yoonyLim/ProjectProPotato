@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ObjectDeactivateWall
   - Knife
+  - Scene Loader
   layers:
   - Default
   - TransparentFX
