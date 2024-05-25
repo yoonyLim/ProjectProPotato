@@ -18,7 +18,7 @@ public class ProfessorController : MonoBehaviour
     public Transform rightAimPoint;
 
     public float startTime;
-    public float throwKeyTime = 0.5f;
+    public float throwKeyTime = 0.3f;
     bool isHoldingA = false;
 
 
@@ -49,7 +49,7 @@ public class ProfessorController : MonoBehaviour
             }
             if (Input.GetKey(KeyCode.A) && isHoldingA)
             {
-                if (Time.time - startTime > 1f)
+                if (Time.time - startTime > 0.5f)
                 {
                     RollPin();
                 }
