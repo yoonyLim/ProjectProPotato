@@ -20,15 +20,34 @@ public class Player : MonoBehaviour
     public GameObject corpse;
     CapsuleCollider playerCollider;
 
-    public bool isRight, isDodge;
+
+    private bool isRight, isDodge;
     public float speed = 20;
     public bool gameOver;
+   
 
+    //left and right position for potato
     private Vector3 rightPos = Vector3.right * 5 + Vector3.up * 0.5f;
     private Vector3 leftPos = Vector3.left * 5 + Vector3.up * 0.5f;
 
     // bool to prevent double hit
     private bool isGracePeriod = false;
+
+    //var for fever
+    public float feverWaitTime = 5f;
+    private enum feverState { steady, ready, on, used }
+    [SerializeField] feverState fever = feverState.steady;
+
+    //var for hold input
+    private bool holding = false;
+    private float holdStart;
+
+    //renderers
+    Renderer potatoRenderer;
+    Renderer armLegRenderer;
+
+    // color to save original
+    Color originColor;
 
     // Start is called before the first frame update
     void Awake()
@@ -38,11 +57,16 @@ public class Player : MonoBehaviour
         isRight = true;
         isDodge = false;
         gameOver = false;
+        
 
-        potatoAnimator = GetComponent<Animator>();
+        potatoAnimator = GetComponentInChildren<Animator>();
         rigid = GetComponent<Rigidbody>();
         noiseParam = virCam.GetCinemachineComponent<Cinemachine.CinemachineBasicMultiChannelPerlin>();
         playerCollider = GetComponent<CapsuleCollider>();
+
+        potatoRenderer = runningBody.GetComponentsInChildren<Renderer>()[0];
+        armLegRenderer = runningBody.GetComponentsInChildren<Renderer>()[1];
+        originColor = potatoRenderer.material.color;
         
         runningBody.SetActive(true);
         corpse.SetActive(false);
@@ -65,17 +89,44 @@ public class Player : MonoBehaviour
                 transform.position += Vector3.left * Time.deltaTime * speed;
             }
 
-
-
-            if (Input.GetKeyDown(KeyCode.Space) && !isDodge)
+            if (!isDodge)
             {
-                //potatoAnimator.SetBool("isJump", true);
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    holding = true;
+                    holdStart = Time.time;
+                
+                }
+                if (Input.GetKeyUp(KeyCode.Space))
+                {
+                    float howLong = Time.time - holdStart;
+                    if(howLong < 0.7f || fever != feverState.ready)
+                    {
+                        StartCoroutine(DodgeTime());
+                    }
+                    else
+                    {
+                        StartCoroutine(FeverStart());
+                    }
+                    holding = false;
+                }       
+            }
+            
 
-                StartCoroutine(DodgeTime());
+            if (fever == feverState.steady && GameManager.instance.elapsedTime > feverWaitTime)
+            {
+                fever = feverState.ready;
+            }
+
+            if (fever == feverState.on)
+            {
+                potatoRenderer.material.color = new Color(Random.Range(0, 255) / 50f, Random.Range(0, 255) / 50f, Random.Range(0, 255) / 50f, 5);
+                armLegRenderer.material.color = new Color(Random.Range(0, 255) / 50f, Random.Range(0, 255) / 50f, Random.Range(0, 255) / 50f, 5);
             }
         }
         else
         {
+            if (transform.position.z <30)
             transform.position += Vector3.forward * Time.deltaTime * speed;
             
         }
@@ -84,9 +135,10 @@ public class Player : MonoBehaviour
     private void OnTriggerEnter(Collider collision)
     {
         Debug.Log(collision.gameObject.tag);
-        if (collision.gameObject.tag == "Knife" && !isGracePeriod)
+        if (collision.gameObject.tag == "Knife" && !isGracePeriod && fever != feverState.on)
         {
             StartCoroutine(Hit());
+            StartCoroutine(HitEffect());
             if(Lives.Value <= 0)
             {
                 gameOver = true;
@@ -113,8 +165,31 @@ public class Player : MonoBehaviour
         Lives.Value--;
         yield return new WaitForSeconds(0.3f);
         noiseParam.m_AmplitudeGain = 0;
-        yield return new WaitForSeconds(1);
         isGracePeriod = false;
+    }
+
+    IEnumerator HitEffect()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            potatoRenderer.material.color = Color.red;
+            armLegRenderer.material.color = Color.red;
+            yield return new WaitForSeconds(0.06f);
+            potatoRenderer.material.color = originColor;
+            armLegRenderer.material.color = originColor;
+            yield return new WaitForSeconds(0.06f);
+        }
+    }
+
+    IEnumerator FeverStart()
+    {
+        fever = feverState.on;
+        potatoAnimator.SetBool("Fever", true);
+        yield return new WaitForSeconds(10f);
+        potatoRenderer.material.color = originColor;
+        armLegRenderer.material.color = originColor;
+        fever = feverState.used;
+        potatoAnimator.SetBool("Fever", false);
     }
 
     IEnumerator Death()
