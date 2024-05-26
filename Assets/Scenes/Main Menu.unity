@@ -2317,7 +2317,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   percentTxt: {fileID: 1782510605}
   blowGauge: {fileID: 1318635873}
-  loadSceneManager: {fileID: 598538765}
 --- !u!1 &1562423656
 GameObject:
   m_ObjectHideFlags: 0
