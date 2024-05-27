@@ -9,6 +9,8 @@ public class BlowGaugeController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI percentTxt = null;
     [SerializeField] private Slider blowGauge = null;
 
+    public float gaugeSpeed = 70f;
+
     public void SetPercentTxt(float val)
     {
         float res = val;
@@ -30,16 +32,17 @@ public class BlowGaugeController : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(NamedPipeClient1.Instance.ProAvg);
+        Debug.Log($"Professor: {NamedPipeClient1.Instance.ProAvg}");
 
-        if (Input.GetKey(KeyCode.Space))
+        if (NamedPipeClient1.Instance.ProAvg >= 3)
         {
-            blowGauge.value += 0.6f;
+            blowGauge.value += gaugeSpeed * Time.deltaTime;
         }
-
         if (blowGauge.value == 100.0f)
         {
             LoadingController.instance.LoadScene(1);
         }
     }
+
+    
 }

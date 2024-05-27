@@ -11,12 +11,12 @@ public class NamedPipeClient1 : MonoBehaviour
     private const string PipeName = "pipe1";
     private NamedPipeClientStream pipeClient;
 
-    public int ProInt1;
-    public int PotInt1;
+    private int ProInt1;
+    private int PotInt1;
     public int ProAvg;
     public int PotAvg;
 
-    private const int maxNumCounts = 2; // count up to 0.4 seconds; tics every 0.2 second
+    private const int maxNumCounts = 4; // count up to 0.4 seconds; tics every 0.2 second
     private int numCounts = 0;
 
     void Start()
@@ -51,8 +51,10 @@ public class NamedPipeClient1 : MonoBehaviour
 
                 if (numCounts == maxNumCounts)
                 {
-                    ProAvg = ProInt1 - int.Parse(message.Split(',')[0]);
-                    PotAvg = PotInt1 - int.Parse(message.Split(',')[1]);
+                    ProAvg = int.Parse(message.Split(',')[0]) - ProInt1;
+                    PotAvg =  int.Parse(message.Split(',')[1]) - PotInt1;
+                    ProInt1 = int.Parse(message.Split(',')[0]);
+                    PotInt1 = int.Parse(message.Split(',')[1]);
 
                     numCounts = 0;
                 }
