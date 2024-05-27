@@ -6,7 +6,7 @@ public class BGM : MonoBehaviour
 {
     [SerializeField] AudioClip firstBGM;
     [SerializeField] AudioClip secondBGM;
-    AudioSource audioSource;
+    public AudioSource audioSource;
     Animator musicAnim;
     bool musicChanged = false;
     // Start is called before the first frame update

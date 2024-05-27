@@ -48,6 +48,11 @@ public class AudioManager : MonoBehaviour
     [SerializeField]
     [Range(0f, 1f)] float jumpSoundVolume = 1f;
 
+    [Header("Game Result Sound")]
+    [SerializeField] AudioClip resultSound;
+    [SerializeField]
+    [Range(0f, 1f)] float resultSoundVolume = 1f;
+
 
     private void Awake()
     {
@@ -109,5 +114,10 @@ public class AudioManager : MonoBehaviour
     public void PlayJumpSound()
     {
         PlayClip(jumpSound, jumpSoundVolume);
+    }
+    
+    public void PlayResultSound()
+    {
+        PlayClip(resultSound, resultSoundVolume);
     }
 }

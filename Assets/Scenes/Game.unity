@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731704, g: 0.1341472, b: 0.121078566, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2202,9 +2202,11 @@ MonoBehaviour:
   angerVoice: {fileID: 8300000, guid: 3131aa11890e69241958d4cacf5180eb, type: 3}
   angerVoiceVolume: 1
   hitSound: {fileID: 8300000, guid: af3cd350c2a1bbc4b99d01e027615162, type: 3}
-  hitSoundVolume: 1
+  hitSoundVolume: 0.7
   jumpSound: {fileID: 8300000, guid: f376efd2c8091724391199838794d3e9, type: 3}
   jumpSoundVolume: 1
+  resultSound: {fileID: 8300000, guid: a371503cb7d83364683272ff433c129f, type: 3}
+  resultSoundVolume: 0.3
 --- !u!4 &299969651
 Transform:
   m_ObjectHideFlags: 0
@@ -13052,6 +13054,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firstBGM: {fileID: 8300000, guid: 9a4a144270f057c4484242099f9963d3, type: 3}
   secondBGM: {fileID: 8300000, guid: 14911ae783e21a74ba07e012b9ef2269, type: 3}
+  audioSource: {fileID: 0}
 --- !u!95 &1037802294
 Animator:
   serializedVersion: 5

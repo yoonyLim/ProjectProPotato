@@ -22,6 +22,8 @@ public class ResultDisplay : MonoBehaviour
     private IEnumerator ShowResult()
     {
         yield return new WaitForSeconds(3f);
+        AudioManager.instance.PlayResultSound();
+        FindObjectOfType<BGM>().audioSource.Stop();
         isGameFinished = true;
         inGameUI.SetActive(false);
         resultUI.SetActive(true);

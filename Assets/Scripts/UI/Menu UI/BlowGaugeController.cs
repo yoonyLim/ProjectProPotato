@@ -33,6 +33,10 @@ public class BlowGaugeController : MonoBehaviour
     private void Update()
     {
         Debug.Log($"Professor: {NamedPipeClient1.Instance.ProAvg}");
+        if (Input.GetKey(KeyCode.Space))
+        {
+            blowGauge.value += 0.6f;
+        }
 
         if (NamedPipeClient1.Instance.ProAvg >= 3)
         {
