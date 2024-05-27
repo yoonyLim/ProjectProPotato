@@ -30,7 +30,7 @@ public class BlowGaugeController : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(NamedPipeClient1.Instance.ProInt);
+        Debug.Log(NamedPipeClient1.Instance.ProAvg);
 
         if (Input.GetKey(KeyCode.Space))
         {
