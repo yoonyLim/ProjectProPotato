@@ -9,11 +9,9 @@ public class BlowGaugeController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI percentTxt = null;
     [SerializeField] private Slider blowGauge = null;
 
-    private float unitPercent = 1.0f;
-
     public void SetPercentTxt(float val)
     {
-        float res = val * unitPercent;
+        float res = val;
         percentTxt.text = res.ToString("0") + "%";
     }
 

@@ -256,7 +256,7 @@ public class Player : MonoBehaviour
         playerCollider.enabled = false;
         runningBody.SetActive(false);
         corpse.SetActive(true);
-        resultDisplay.UpdateWinner("??????");
+        resultDisplay.UpdateWinner("교수님");
         yield return new WaitForSeconds(0f);
     }
 }

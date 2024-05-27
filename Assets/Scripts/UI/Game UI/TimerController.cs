@@ -36,6 +36,6 @@ public class TimerController : MonoBehaviour
         if (ElapsedTime.Value < PLAY_TIME)
             ElapsedTime.Value += Time.deltaTime;
         else
-            resultDisplay.UpdateWinner("°¨ÀÚ");
+            resultDisplay.UpdateWinner("??");
     }
 }

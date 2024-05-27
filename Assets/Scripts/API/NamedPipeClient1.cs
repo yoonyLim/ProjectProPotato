@@ -25,7 +25,7 @@ public class NamedPipeClient1 : MonoBehaviour
     async Task ConnectToPipeAsync()
     {
         await pipeClient.ConnectAsync();
-        Debug.Log("Connected to pipe1");
+        Debug.Log("Connected to " + PipeName);
 
         await ReadFromPipeAsync();
     }
