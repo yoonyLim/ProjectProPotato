@@ -37,8 +37,9 @@ public class Player : MonoBehaviour
     public float feverWaitTime = 5f;
     private enum feverState { steady, ready, on, used }
     [SerializeField] feverState fever = feverState.steady;
-    private int feverGage = 0;
-    public float spinRate = 10f;
+    public int feverGage = 0;
+    [SerializeField] int dodgesforFever = 3;
+    public float spinRate = 17f;
     public float spinValue;
     [SerializeField] GameObject flameEffect;
 
@@ -117,7 +118,7 @@ public class Player : MonoBehaviour
             }
             
             //fever check
-            if (fever == feverState.steady && GameManager.instance.elapsedTime > feverWaitTime)
+            if (fever == feverState.steady && feverGage>=dodgesforFever)
             {
                 fever = feverState.ready;
             }
@@ -158,6 +159,24 @@ public class Player : MonoBehaviour
             }
         }
     }
+
+    public void ObserveAttack(int attackTimes)
+    {
+        
+        StartCoroutine(JudgeAttacked());
+
+    }
+
+    IEnumerator JudgeAttacked()
+    {
+        int currentHeath = Lives.Value;
+        yield return new WaitForSeconds(1.5f);
+        if(currentHeath == Lives.Value && feverGage<dodgesforFever)
+        {
+            feverGage++;
+        }
+    }
+
 
     IEnumerator DodgeTime()
     {
@@ -205,6 +224,7 @@ public class Player : MonoBehaviour
         potatoAnimator.SetBool("Fever", false);
         runningBody.transform.rotation = Quaternion.Euler(0, 180f, 0);
         flameEffect.SetActive(false);
+        feverGage = 0;
     }
 
     IEnumerator Death()

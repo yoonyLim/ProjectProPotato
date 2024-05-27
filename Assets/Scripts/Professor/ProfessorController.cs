@@ -46,8 +46,7 @@ public class ProfessorController : MonoBehaviour
                 float timeDiff = Time.time - startTime;
                 if (timeDiff <= throwKeyTime)
                 {
-                    ThrowKnife();
-                    attackCount.Value++;
+                    ThrowKnife();  
                 }
                 isHoldingA = false;
             }
@@ -56,7 +55,6 @@ public class ProfessorController : MonoBehaviour
                 if (Time.time - startTime > 0.5f)
                 {
                     RollPin();
-                    attackCount.Value++;
                 }
                 
             } 
@@ -106,7 +104,7 @@ public class ProfessorController : MonoBehaviour
                 AudioManager.instance.PlayThrowVoice();
                 StartCoroutine(PlayThrowSound(0.2f));
             }
-
+            attackCount.Value++;
             StartCoroutine(ThrowCooldownRoutine(GameManager.instance.knifeCooldown));
 
 
@@ -131,6 +129,7 @@ public class ProfessorController : MonoBehaviour
             AudioManager.instance.PlayRollVoice();
 
             StartCoroutine(RollCooldownRoutine(GameManager.instance.pinCooldown));
+            attackCount.Value++;
         }
     }
 
