@@ -11,7 +11,7 @@ public class TimerController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI timerTxt = null;
     [SerializeField] private Slider timerBar = null;
     
-    private const float PLAY_TIME = 90.0f;
+    private const float PLAY_TIME = 60.0f;
 
     [SerializeField] GenericObserver<float> ElapsedTime = new GenericObserver<float>(0.0f);
 

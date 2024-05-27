@@ -52,7 +52,7 @@ public class ProfessorController : MonoBehaviour
             }
             if (Input.GetKey(KeyCode.A) && isHoldingA)
             {
-                if (Time.time - startTime > 0.5f)
+                if (Time.time - startTime > 0.3f)
                 {
                     RollPin();
                 }
