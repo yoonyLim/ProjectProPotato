@@ -10,6 +10,10 @@ public class Player : MonoBehaviour
 
     [SerializeField] GenericObserver<int> Lives = new GenericObserver<int>(3);
 
+    [SerializeField] GameObject normalFace;
+    [SerializeField] GameObject invincibleFace;
+    [SerializeField] GameObject hitFace;
+
     Animator potatoAnimator;
     Rigidbody rigid;
 
@@ -56,6 +60,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        normalFace.SetActive(true);
         Lives.Invoke();
 
         isRight = true;
@@ -181,6 +186,7 @@ public class Player : MonoBehaviour
     {
         isRight = !isRight;
         isDodge = true;
+        AudioManager.instance.PlayJumpSound();
         rigid.velocity += Vector3.up * 20f;
         yield return new WaitForSeconds(0.5f);
         rigid.velocity += Vector3.down * 30f;
@@ -191,12 +197,25 @@ public class Player : MonoBehaviour
     IEnumerator Hit()
     {
         isGracePeriod = true;
+        AudioManager.instance.PlayHitSound();
+        StartCoroutine(HitFace());
         noiseParam.m_AmplitudeGain = 12;
         Lives.Value--;
         yield return new WaitForSeconds(0.3f);
         noiseParam.m_AmplitudeGain = 0;
         isGracePeriod = false;
     }
+
+    IEnumerator HitFace()
+    {
+        normalFace.SetActive(false);
+        invincibleFace.SetActive(false);
+        hitFace.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        hitFace.SetActive(false);
+        normalFace.SetActive(true);
+    }
+
 
     IEnumerator HitEffect()
     {
@@ -213,6 +232,9 @@ public class Player : MonoBehaviour
 
     IEnumerator FeverStart()
     {
+        normalFace.SetActive(false);
+        invincibleFace.SetActive(true);
+        hitFace.SetActive(false);
         fever = feverState.on;
         potatoAnimator.SetBool("Fever", true);
         flameEffect.SetActive(true);

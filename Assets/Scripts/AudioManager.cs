@@ -38,6 +38,16 @@ public class AudioManager : MonoBehaviour
     [SerializeField]
     [Range(0f, 1f)] float angerVoiceVolume = 1f;
 
+    [Header("Hit Sound")]
+    [SerializeField] AudioClip hitSound;
+    [SerializeField]
+    [Range(0f, 1f)] float hitSoundVolume = 1f;
+
+    [Header("Jump Sound")]
+    [SerializeField] AudioClip jumpSound;
+    [SerializeField]
+    [Range(0f, 1f)] float jumpSoundVolume = 1f;
+
 
     private void Awake()
     {
@@ -89,5 +99,15 @@ public class AudioManager : MonoBehaviour
     public void PlayAngerVoice()
     {
         PlayClip(angerVoice, angerVoiceVolume);
+    }
+
+    public void PlayHitSound()
+    {
+        PlayClip(hitSound, hitSoundVolume);
+    }
+
+    public void PlayJumpSound()
+    {
+        PlayClip(jumpSound, jumpSoundVolume);
     }
 }
