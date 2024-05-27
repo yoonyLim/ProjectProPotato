@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.2644894, g: 0.057039537, b: 0.42862383, a: 1}
+  m_IndirectSpecularColor: {r: 0.2644894, g: 0.05703952, b: 0.42862388, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -720,10 +720,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c00bb19f03a560a42802ba1f3696e608, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ProInt: 0
-  PotInt: 0
-  AvgPro: 0
-  AvgPot: 0
+  ProAvg: 0
+  PotAvg: 0
 --- !u!4 &332717023
 Transform:
   m_ObjectHideFlags: 0
@@ -2365,6 +2363,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   percentTxt: {fileID: 1782510605}
   blowGauge: {fileID: 1318635873}
+  gaugeSpeed: 70
 --- !u!1 &1562423656
 GameObject:
   m_ObjectHideFlags: 0
