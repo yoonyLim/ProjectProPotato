@@ -9,6 +9,8 @@ public class ProfessorController : MonoBehaviour
     [SerializeField] PinPooler pinPool;
     [SerializeField] SkillCooldown SkillUI;
 
+    [SerializeField] GenericObserver<int> attackCount = new GenericObserver<int>(0);
+
     Animator anim;
     bool throwReady = true;
     bool rollReady = true;
@@ -26,6 +28,7 @@ public class ProfessorController : MonoBehaviour
     private void Awake()
     {
         anim = GetComponent<Animator>();
+        attackCount.Invoke();
     }
 
     // Update is called once per frame
@@ -44,6 +47,7 @@ public class ProfessorController : MonoBehaviour
                 if (timeDiff <= throwKeyTime)
                 {
                     ThrowKnife();
+                    attackCount.Value++;
                 }
                 isHoldingA = false;
             }
@@ -52,6 +56,7 @@ public class ProfessorController : MonoBehaviour
                 if (Time.time - startTime > 0.5f)
                 {
                     RollPin();
+                    attackCount.Value++;
                 }
                 
             } 

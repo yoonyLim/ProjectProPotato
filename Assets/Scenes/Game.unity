@@ -14818,6 +14818,11 @@ MonoBehaviour:
   knifePool: {fileID: 1123012446}
   pinPool: {fileID: 382295326}
   SkillUI: {fileID: 1940592829}
+  attackCount:
+    value: 0
+    onValueChanged:
+      m_PersistentCalls:
+        m_Calls: []
   knifeSpawnIndex: 0
   leftAimPoint: {fileID: 1559919732}
   rightAimPoint: {fileID: 3350359}
@@ -15823,6 +15828,7 @@ MonoBehaviour:
   fever: 0
   spinRate: 1
   spinValue: 0
+  flameEffect: {fileID: 1588663385}
 --- !u!4 &1472382601
 Transform:
   m_ObjectHideFlags: 0
@@ -16419,12 +16425,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1588663386}
   m_Layer: 0
-  m_Name: effect
+  m_Name: FlameEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1588663386
 Transform:
   m_ObjectHideFlags: 0

@@ -40,6 +40,7 @@ public class Player : MonoBehaviour
     private int feverGage = 0;
     public float spinRate = 10f;
     public float spinValue;
+    [SerializeField] GameObject flameEffect;
 
     //var for hold input
     private bool holding = false;
@@ -60,7 +61,7 @@ public class Player : MonoBehaviour
         isRight = true;
         isDodge = false;
         gameOver = false;
-        
+        flameEffect.SetActive(false);
 
         potatoAnimator = GetComponentInChildren<Animator>();
         rigid = GetComponent<Rigidbody>();
@@ -196,12 +197,14 @@ public class Player : MonoBehaviour
     {
         fever = feverState.on;
         potatoAnimator.SetBool("Fever", true);
+        flameEffect.SetActive(true);
         yield return new WaitForSeconds(10f);
         potatoRenderer.material.color = originColor;
         armLegRenderer.material.color = originColor;
         fever = feverState.used;
         potatoAnimator.SetBool("Fever", false);
         runningBody.transform.rotation = Quaternion.Euler(0, 180f, 0);
+        flameEffect.SetActive(false);
     }
 
     IEnumerator Death()
