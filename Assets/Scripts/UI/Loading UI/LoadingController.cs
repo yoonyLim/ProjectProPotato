@@ -45,7 +45,10 @@ public class LoadingController : MonoBehaviour
             loadingBar.value = operation.progress * 100;
             yield return null;
         }
+    }
 
+    private void Start()
+    {
         transitionAnim.SetTrigger("Fade Out");
     }
 
@@ -54,7 +57,6 @@ public class LoadingController : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
         } 
         else
         {

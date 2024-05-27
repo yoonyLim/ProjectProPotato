@@ -12,10 +12,17 @@ public class ResultDisplay : MonoBehaviour
 
     private bool isGameFinished = false;
     private float waitTime = 5.0f;
+
     public void UpdateWinner(string winner)
     {
-        isGameFinished = true;
         winnerText.text = winner;
+        StartCoroutine(ShowResult());
+    }
+
+    private IEnumerator ShowResult()
+    {
+        yield return new WaitForSeconds(3f);
+        isGameFinished = true;
         inGameUI.SetActive(false);
         resultUI.SetActive(true);
     }

@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour
 
     public bool rageTransforming = false;
 
+    public int maxPotatoFeverCount = 3;
+
     private void Awake()
     {
         if (instance == null)

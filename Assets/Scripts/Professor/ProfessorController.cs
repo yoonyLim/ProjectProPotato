@@ -28,7 +28,7 @@ public class ProfessorController : MonoBehaviour
     private void Awake()
     {
         anim = GetComponent<Animator>();
-        attackCount.Invoke();
+        //attackCount.Invoke();
     }
 
     // Update is called once per frame
