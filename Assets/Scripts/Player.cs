@@ -239,6 +239,9 @@ public class Player : MonoBehaviour
         potatoAnimator.SetBool("Fever", true);
         flameEffect.SetActive(true);
         yield return new WaitForSeconds(10f);
+        normalFace.SetActive(true);
+        invincibleFace.SetActive(false);
+        hitFace.SetActive(false);
         potatoRenderer.material.color = originColor;
         armLegRenderer.material.color = originColor;
         fever = feverState.used;
