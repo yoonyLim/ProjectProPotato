@@ -2201,6 +2201,10 @@ MonoBehaviour:
   rollVoiceVolume: 0.4
   angerVoice: {fileID: 8300000, guid: 3131aa11890e69241958d4cacf5180eb, type: 3}
   angerVoiceVolume: 1
+  hitSound: {fileID: 0}
+  hitSoundVolume: 1
+  jumpSound: {fileID: 0}
+  jumpSoundVolume: 1
 --- !u!4 &299969651
 Transform:
   m_ObjectHideFlags: 0
@@ -4300,7 +4304,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.9262848, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -5481,6 +5485,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   feverGauge: {fileID: 706020064}
+  fill: {fileID: 604862972}
 --- !u!1001 &706380686
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16307,6 +16312,9 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  normalFace: {fileID: 0}
+  invincibleFace: {fileID: 0}
+  hitFace: {fileID: 0}
   virCam: {fileID: 53691415}
   runningBody: {fileID: 868121177}
   corpse: {fileID: 320091232}

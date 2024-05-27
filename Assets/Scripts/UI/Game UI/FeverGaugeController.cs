@@ -15,8 +15,6 @@ public class FeverGaugeController : MonoBehaviour
 
     public void UpdateFeverCount(int val)
     {
-        print(val);
-
         curFeverCount = val;
 
         if (curFeverCount != maxFeverCount)
