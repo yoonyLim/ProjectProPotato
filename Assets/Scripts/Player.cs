@@ -37,6 +37,9 @@ public class Player : MonoBehaviour
     public float feverWaitTime = 5f;
     private enum feverState { steady, ready, on, used }
     [SerializeField] feverState fever = feverState.steady;
+    private int feverGage = 0;
+    public float spinRate = 10f;
+    public float spinValue;
 
     //var for hold input
     private bool holding = false;
@@ -112,7 +115,7 @@ public class Player : MonoBehaviour
                 }       
             }
             
-
+            //fever check
             if (fever == feverState.steady && GameManager.instance.elapsedTime > feverWaitTime)
             {
                 fever = feverState.ready;
@@ -122,11 +125,19 @@ public class Player : MonoBehaviour
             {
                 potatoRenderer.material.color = new Color(Random.Range(0, 255) / 50f, Random.Range(0, 255) / 50f, Random.Range(0, 255) / 50f, 5);
                 armLegRenderer.material.color = new Color(Random.Range(0, 255) / 50f, Random.Range(0, 255) / 50f, Random.Range(0, 255) / 50f, 5);
+                spinValue += spinRate ;
+                runningBody.transform.eulerAngles = new Vector3(0, spinValue+180, 0);
+            }
+
+            //potato win
+            if (GameManager.instance.elapsedTime > 90f)
+            {
+                transform.position += Vector3.back * Time.deltaTime * speed;
             }
         }
         else
         {
-            if (transform.position.z <30)
+            if (transform.position.z < 28)
             transform.position += Vector3.forward * Time.deltaTime * speed;
             
         }
@@ -190,6 +201,7 @@ public class Player : MonoBehaviour
         armLegRenderer.material.color = originColor;
         fever = feverState.used;
         potatoAnimator.SetBool("Fever", false);
+        runningBody.transform.rotation = Quaternion.Euler(0, 180f, 0);
     }
 
     IEnumerator Death()
