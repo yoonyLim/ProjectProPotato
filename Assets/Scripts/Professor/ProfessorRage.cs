@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ProfessorRage : MonoBehaviour
 {
-    [SerializeField] float rageStartTime = 10f;
+    [SerializeField] float rageStartTime = 40f;
     SpriteRenderer spriteRenderer;
     float colorElapsedTime = 0f;
     [SerializeField] float colorChangeDuration = 4f;
@@ -34,9 +34,9 @@ public class ProfessorRage : MonoBehaviour
     {
         GameManager.instance.knifeCooldown -= 1f;
         GameManager.instance.pinCooldown -= 1f;
-        GameManager.instance.knifeSpeed += 50f;
+        GameManager.instance.knifeSpeed += 25f;
         GameManager.instance.knifeRoateSpeed += 200f;
-        GameManager.instance.pinSpeed += 50f;
+        GameManager.instance.pinSpeed += 25f;
         GameManager.instance.pinRotateSpeed += 500f;
     }
 

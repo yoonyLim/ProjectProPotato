@@ -78,17 +78,11 @@ public class ProfessorController : MonoBehaviour
 
             
 
-            currentProBlow = NamedPipeClient1.Instance.ProDiff > GameManager.instance.alcoholThreshold;
+            currentProBlow = NamedPipeClient1.Instance.ProBlowing;
             if (currentProBlow && !prevProBlow)
             {
-                holding = true;
-                holdStart = Time.time;
-
-            }
-            if (!currentProBlow && prevProBlow)
-            {
-                float howLong = Time.time - holdStart;
-                if (howLong < 1.2f)
+                int randomIndex = Random.Range(0, 10);
+                if (randomIndex <= 6 || !rollReady)
                 {
                     ThrowKnife();
                 }
@@ -96,7 +90,7 @@ public class ProfessorController : MonoBehaviour
                 {
                     RollPin();
                 }
-                holding = false;
+
             }
             
 
