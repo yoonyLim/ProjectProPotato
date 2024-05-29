@@ -21,11 +21,10 @@ public class ProfessorController : MonoBehaviour
 
     public float startTime;
     public float throwKeyTime = 0.3f;
-    float throwBlowTime = 0.3f;
     bool isHoldingA = false;
     bool isBlowing = false;
-    float blowStartTime;
 
+    
 
 
     private void Awake()
@@ -62,26 +61,10 @@ public class ProfessorController : MonoBehaviour
                 
             } 
 
-            if (NamedPipeClient1.Instance.ProAvg >= 2)
-            {
-                isBlowing = true;
-                blowStartTime = Time.time;
-            }
-            if (NamedPipeClient1.Instance.ProAvg <= 0 && isBlowing)
-            {
-                float timeDiff = Time.time - blowStartTime;
-                if (timeDiff <= throwBlowTime)
-                    ThrowKnife();
-                isBlowing = false;
-            }
+            
 
-            if (isBlowing)
-            {
-                if (Time.time - blowStartTime > 0.5f)
-                {
-                    RollPin();
-                }
-            }
+
+            
         }
         
 
