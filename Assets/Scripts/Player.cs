@@ -48,7 +48,6 @@ public class Player : MonoBehaviour
     [SerializeField] GameObject flameEffect;
 
     //var for hold input
-    private bool holding = false;
     private float holdStart;
 
     //renderers

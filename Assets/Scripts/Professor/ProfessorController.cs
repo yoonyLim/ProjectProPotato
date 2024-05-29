@@ -60,7 +60,7 @@ public class ProfessorController : MonoBehaviour
                 }
                 isHoldingA = false;
             }
-            if (Input.GetKey(KeyCode.A))
+            if (Input.GetKey(KeyCode.A) && isHoldingA)
             {
                 if (Time.time - startTime > 0.5f)
                 {
@@ -68,12 +68,7 @@ public class ProfessorController : MonoBehaviour
                 }
                 
             }
-            
-
-            //if (!prevProBlow && NamedPipeClient1.Instance.ProBlowing)
-            //{
-            //    ThrowKnife();
-            //}
+           
 
 
             
