@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Timers;
 using UnityEngine;
 using UnityEngine.Video;
+using static Cinemachine.CinemachineOrbitalTransposer;
 
 public class ProfessorController : MonoBehaviour
 {
@@ -20,9 +22,14 @@ public class ProfessorController : MonoBehaviour
     public Transform rightAimPoint;
 
     public float startTime;
-    public float throwKeyTime = 0.3f;
+    public float throwKeyTime = 0.8f;
     bool isHoldingA = false;
-    bool isBlowing = false;
+    
+
+    bool currentProBlow;
+    bool prevProBlow = false;
+    bool holding = false;
+    float holdStart;
 
     
 
@@ -38,6 +45,7 @@ public class ProfessorController : MonoBehaviour
     {
         if (!GameManager.instance.rageTransforming && GameManager.instance.state == GameManager.professorState.Idle)
         {
+            
             if (Input.GetKeyDown(KeyCode.A))
             {
                 isHoldingA = true;
@@ -52,19 +60,47 @@ public class ProfessorController : MonoBehaviour
                 }
                 isHoldingA = false;
             }
-            if (Input.GetKey(KeyCode.A) && isHoldingA)
+            if (Input.GetKey(KeyCode.A))
             {
-                if (Time.time - startTime > 0.3f)
+                if (Time.time - startTime > 0.5f)
                 {
                     RollPin();
                 }
                 
-            } 
+            }
+            
+
+            //if (!prevProBlow && NamedPipeClient1.Instance.ProBlowing)
+            //{
+            //    ThrowKnife();
+            //}
+
 
             
 
+            currentProBlow = NamedPipeClient1.Instance.ProDiff > GameManager.instance.alcoholThreshold;
+            if (currentProBlow && !prevProBlow)
+            {
+                holding = true;
+                holdStart = Time.time;
 
+            }
+            if (!currentProBlow && prevProBlow)
+            {
+                float howLong = Time.time - holdStart;
+                if (howLong < 1.2f)
+                {
+                    ThrowKnife();
+                }
+                else
+                {
+                    RollPin();
+                }
+                holding = false;
+            }
             
+
+            prevProBlow = NamedPipeClient1.Instance.ProBlowing;
         }
         
 

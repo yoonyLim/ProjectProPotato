@@ -103,13 +103,13 @@ public class Player : MonoBehaviour
             if (!isDodge)
             {
                 blowcurrent = NamedPipeClient1.Instance.PotDiff > GameManager.instance.alcoholThreshold;
-                if (blowcurrent == true && blowbefore ==false)
+                if (blowcurrent && !blowbefore)
                 {
                     holding = true;
                     holdStart = Time.time;
 
                 }
-                if (blowcurrent == false && blowbefore == true)
+                if (!blowcurrent && blowbefore)
                 {
                     float howLong = Time.time - holdStart;
                     if (howLong < 0.7f || fever != feverState.ready)
@@ -176,7 +176,7 @@ public class Player : MonoBehaviour
     
     private void OnTriggerEnter(Collider collision)
     {
-        Debug.Log(collision.gameObject.tag);
+        
         if (collision.gameObject.tag == "Knife" && !isGracePeriod && fever != feverState.on)
         {
             StartCoroutine(Hit());

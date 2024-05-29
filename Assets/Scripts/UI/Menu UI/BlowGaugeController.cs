@@ -38,7 +38,7 @@ public class BlowGaugeController : MonoBehaviour
             blowGauge.value += 0.6f;
         }
 
-        if (NamedPipeClient1.Instance.proBlowing || NamedPipeClient1.Instance.potBlowing)
+        if (NamedPipeClient1.Instance.ProBlowing || NamedPipeClient1.Instance.PotBlowing)
         {
             blowGauge.value += gaugeSpeed * Time.deltaTime;
         }
