@@ -27,6 +27,8 @@ public class Player : MonoBehaviour
     private bool isRight, isDodge;
     public float speed = 20;
     public bool gameOver;
+    private int blow;
+    private bool blowbefore = false, blowcurrent;
    
 
     //left and right position for potato
@@ -100,6 +102,28 @@ public class Player : MonoBehaviour
 
             if (!isDodge)
             {
+                blowcurrent = NamedPipeClient1.Instance.PotAvg > 2;
+                if (blowcurrent == true && blowbefore ==false)
+                {
+                    holding = true;
+                    holdStart = Time.time;
+
+                }
+                if (blowcurrent == false && blowbefore == true)
+                {
+                    float howLong = Time.time - holdStart;
+                    if (howLong < 0.7f || fever != feverState.ready)
+                    {
+                        StartCoroutine(DodgeTime());
+                    }
+                    else
+                    {
+                        StartCoroutine(FeverStart());
+                    }
+                    holding = false;
+                }
+                blowbefore = NamedPipeClient1.Instance.PotAvg > 2;
+                /*
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
                     holding = true;
@@ -118,7 +142,8 @@ public class Player : MonoBehaviour
                         StartCoroutine(FeverStart());
                     }
                     holding = false;
-                }       
+                }
+                */
             }
             
             //fever check
@@ -238,13 +263,14 @@ public class Player : MonoBehaviour
         fever = feverState.on;
         potatoAnimator.SetBool("Fever", true);
         flameEffect.SetActive(true);
+
         yield return new WaitForSeconds(10f);
         normalFace.SetActive(true);
         invincibleFace.SetActive(false);
         hitFace.SetActive(false);
         potatoRenderer.material.color = originColor;
         armLegRenderer.material.color = originColor;
-        fever = feverState.used;
+        fever = feverState.steady;
         potatoAnimator.SetBool("Fever", false);
         runningBody.transform.rotation = Quaternion.Euler(0, 180f, 0);
         flameEffect.SetActive(false);
