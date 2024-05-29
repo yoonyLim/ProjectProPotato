@@ -102,7 +102,7 @@ public class Player : MonoBehaviour
 
             if (!isDodge)
             {
-                blowcurrent = NamedPipeClient1.Instance.PotAvg > 2;
+                blowcurrent = NamedPipeClient1.Instance.PotDiff > GameManager.instance.alcoholThreshold;
                 if (blowcurrent == true && blowbefore ==false)
                 {
                     holding = true;
@@ -122,7 +122,7 @@ public class Player : MonoBehaviour
                     }
                     holding = false;
                 }
-                blowbefore = NamedPipeClient1.Instance.PotAvg > 2;
+                blowbefore = NamedPipeClient1.Instance.PotDiff > GameManager.instance.alcoholThreshold;
                 /*
                 if (Input.GetKeyDown(KeyCode.Space))
                 {

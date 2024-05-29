@@ -32,16 +32,19 @@ public class BlowGaugeController : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log($"Professor: {NamedPipeClient1.Instance.ProAvg}");
+        // Debug.Log($"Professor: {NamedPipeClient1.Instance.ProAvg}");
+
+        // keycode just in case
         if (Input.GetKey(KeyCode.Space))
         {
             blowGauge.value += 0.6f;
         }
 
-        if (NamedPipeClient1.Instance.ProAvg >= 3)
+        if (NamedPipeClient1.Instance.ProAvg >= GameManager.instance.alcoholThreshold)
         {
             blowGauge.value += gaugeSpeed * Time.deltaTime;
         }
+
         if (blowGauge.value == 100.0f)
         {
             LoadingController.instance.LoadScene(1);

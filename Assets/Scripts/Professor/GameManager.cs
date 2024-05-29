@@ -23,6 +23,8 @@ public class GameManager : MonoBehaviour
 
     public int maxPotatoFeverCount = 3;
 
+    public int alcoholThreshold = 3;
+
     private void Awake()
     {
         if (instance == null)
