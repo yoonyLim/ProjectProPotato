@@ -48,6 +48,7 @@ public class Player : MonoBehaviour
     [SerializeField] GameObject flameEffect;
 
     //var for hold input
+    private bool holding = false;
     private float holdStart;
 
     //renderers
@@ -101,8 +102,8 @@ public class Player : MonoBehaviour
 
             if (!isDodge)
             {
-                blowcurrent = NamedPipeClient1.Instance.PotDiff > GameManager.instance.alcoholThreshold;
-                if (blowcurrent && !blowbefore)
+                //blowcurrent = NamedPipeClient1.Instance.PotDiff > GameManager.instance.alcoholThreshold;
+                if (NamedPipeClient1.Instance.PotDiff >= GameManager.instance.alcoholThreshold)
                 {
                     if (fever != feverState.ready)
                     {
@@ -112,11 +113,9 @@ public class Player : MonoBehaviour
                     {
                         StartCoroutine(FeverStart());
                     }
-                    
-
                 }
                
-                blowbefore = NamedPipeClient1.Instance.PotDiff > GameManager.instance.alcoholThreshold;
+                // blowbefore = NamedPipeClient1.Instance.PotDiff > GameManager.instance.alcoholThreshold;
                 
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
@@ -124,7 +123,7 @@ public class Player : MonoBehaviour
                     holdStart = Time.time;
                 
                 }
-                if (Input.GetKeyUp(KeyCode.Space))
+                if (Input.GetKeyUp(KeyCode.Space) && holding)
                 {
                     float howLong = Time.time - holdStart;
                     if(howLong < 0.7f || fever != feverState.ready)
@@ -226,7 +225,7 @@ public class Player : MonoBehaviour
         StartCoroutine(HitFace());
         noiseParam.m_AmplitudeGain = 12;
         Lives.Value--;
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(1f);
         noiseParam.m_AmplitudeGain = 0;
         isGracePeriod = false;
     }
@@ -264,7 +263,7 @@ public class Player : MonoBehaviour
         potatoAnimator.SetBool("Fever", true);
         flameEffect.SetActive(true);
 
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(6f);
         normalFace.SetActive(true);
         invincibleFace.SetActive(false);
         hitFace.SetActive(false);

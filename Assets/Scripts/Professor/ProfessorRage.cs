@@ -34,9 +34,9 @@ public class ProfessorRage : MonoBehaviour
     {
         GameManager.instance.knifeCooldown -= 1f;
         GameManager.instance.pinCooldown -= 1f;
-        GameManager.instance.knifeSpeed += 25f;
+        GameManager.instance.knifeSpeed += 20f;
         GameManager.instance.knifeRoateSpeed += 200f;
-        GameManager.instance.pinSpeed += 25f;
+        GameManager.instance.pinSpeed += 20f;
         GameManager.instance.pinRotateSpeed += 500f;
     }
 

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731704, g: 0.13414727, b: 0.121078536, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731704, g: 0.1341472, b: 0.121078566, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -22625,12 +22625,12 @@ MonoBehaviour:
   state: 0
   knifeCooldown: 2
   pinCooldown: 8
-  knifeSpeed: 75
+  knifeSpeed: 40
   knifeRoateSpeed: 1000
-  pinSpeed: 75
+  pinSpeed: 40
   pinRotateSpeed: 1000
   rageTransforming: 0
-  maxPotatoFeverCount: 3
+  maxPotatoFeverCount: 5
   alcoholThreshold: 3
 --- !u!4 &2048560594
 Transform:

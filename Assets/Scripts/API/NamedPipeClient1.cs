@@ -61,7 +61,7 @@ public class NamedPipeClient1 : MonoBehaviour
                     if (ProDiff >= 3)
                     {
                         ProBlowing = true;
-                        Debug.Log("is Blowing");
+                        Debug.Log("Pro is Blowing");
                     }
                     else
                     {
@@ -69,8 +69,16 @@ public class NamedPipeClient1 : MonoBehaviour
                         Debug.Log("is not Blowing");
                     }
 
-                    if (PotDiff >= 3) PotBlowing = true;
-                    else PotBlowing = false;
+                    if (PotDiff >= 3)
+                    {
+                        PotBlowing = true;
+                        Debug.Log("Pot is Blowing");
+                    }
+                    else
+                    {
+                        PotBlowing = false;
+                        Debug.Log("Pot is not Blowing");
+                    }
 
                     ProDiff = int.Parse(message.Split(',')[0]) - ProInt1;
                     PotDiff = int.Parse(message.Split(',')[1]) - PotInt1;
