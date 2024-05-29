@@ -105,14 +105,7 @@ public class Player : MonoBehaviour
                 blowcurrent = NamedPipeClient1.Instance.PotDiff > GameManager.instance.alcoholThreshold;
                 if (blowcurrent && !blowbefore)
                 {
-                    holding = true;
-                    holdStart = Time.time;
-
-                }
-                if (!blowcurrent && blowbefore)
-                {
-                    float howLong = Time.time - holdStart;
-                    if (howLong < 0.7f || fever != feverState.ready)
+                    if (fever != feverState.ready)
                     {
                         StartCoroutine(DodgeTime());
                     }
@@ -120,8 +113,10 @@ public class Player : MonoBehaviour
                     {
                         StartCoroutine(FeverStart());
                     }
-                    holding = false;
+                    
+
                 }
+               
                 blowbefore = NamedPipeClient1.Instance.PotDiff > GameManager.instance.alcoholThreshold;
                 /*
                 if (Input.GetKeyDown(KeyCode.Space))
