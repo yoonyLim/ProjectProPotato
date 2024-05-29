@@ -118,7 +118,7 @@ public class Player : MonoBehaviour
                 }
                
                 blowbefore = NamedPipeClient1.Instance.PotDiff > GameManager.instance.alcoholThreshold;
-                /*
+                
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
                     holding = true;
@@ -138,7 +138,7 @@ public class Player : MonoBehaviour
                     }
                     holding = false;
                 }
-                */
+                
             }
             
             //fever check
@@ -156,7 +156,7 @@ public class Player : MonoBehaviour
             }
 
             //potato win
-            if (GameManager.instance.elapsedTime > 90f)
+            if (GameManager.instance.elapsedTime > 60f)
             {
                 transform.position += Vector3.back * Time.deltaTime * speed;
             }
@@ -168,7 +168,14 @@ public class Player : MonoBehaviour
             
         }
     }
-    
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("ground")){
+            isDodge = false;
+        }
+    }
+
     private void OnTriggerEnter(Collider collision)
     {
         
@@ -211,7 +218,6 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         rigid.velocity += Vector3.down * 30f;
         yield return new WaitForSeconds(0.4f);
-        isDodge = false;
     }
 
     IEnumerator Hit()
